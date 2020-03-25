@@ -1,0 +1,56 @@
+type: object
+properties:
+  Id:
+    type: string
+  EvalId:
+    type: string
+  Name:
+    type: string
+  Namespace:
+    type: string
+  NodeId:
+    type: string
+  NodeName:
+    type: string
+  JobId:
+    type: string
+  JobType:
+    type: string
+  JobVersion:
+    $ref: './BigInteger.yaml'
+  TaskGroup:
+    type: string
+  DesiredStatus:
+    type: string
+  DesiredDescription:
+    type: string
+  ClientStatus:
+    type: string
+  ClientDescription:
+    type: string
+  TaskStates:
+    type: object
+    additionalProperties:
+      $ref: './TaskState.yaml'
+  DeploymentStatus:
+    $ref: './AllocDeploymentStatus.yaml'
+  FollowupEvalId:
+    type: string
+  RescheduleTracker:
+    $ref: './RescheduleTracker.yaml'
+  PreemptedAllocations:
+    type: array
+    items:
+      type: string
+  PreemptedByAllocation:
+    type: string
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'
+  CreateTime:
+    type: integer
+    format: int64
+  ModifyTime:
+    type: integer
+    format: int64

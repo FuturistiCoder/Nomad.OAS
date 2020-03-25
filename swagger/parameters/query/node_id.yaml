@@ -1,0 +1,6 @@
+name: node_id
+in: query
+description: node id
+required: false
+schema:
+  type: string

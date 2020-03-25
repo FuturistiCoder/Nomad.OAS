@@ -1,0 +1,4 @@
+type: object
+properties:
+  SchedulerConfig:
+    $ref: './SchedulerConfiguration.yaml'

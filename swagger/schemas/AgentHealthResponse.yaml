@@ -1,0 +1,6 @@
+type: object
+properties:
+  Client:
+    $ref: './AgentHealth.yaml'
+  Server:
+    $ref: './AgentHealth.yaml'

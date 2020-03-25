@@ -1,0 +1,10 @@
+type: object
+properties:
+  Name:
+    type: string
+  Type:
+    type: string
+  Source:
+    type: string
+  ReadOnly:
+    type: boolean

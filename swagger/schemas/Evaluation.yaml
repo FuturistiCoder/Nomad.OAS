@@ -1,0 +1,70 @@
+type: object
+properties:
+  Id:
+    type: string
+  Priority:
+    type: integer
+    format: int32
+  Type:
+    type: string
+  TriggeredBy:
+    type: string
+  Namespace:
+    type: string
+  JobId:
+    type: string
+  JobModifyIndex:
+    $ref: './BigInteger.yaml'
+  NodeId:
+    type: string
+  NodeModifyIndex:
+    $ref: './BigInteger.yaml'
+  DeploymentId:
+    type: string
+  Status:
+    type: string
+  StatusDescription:
+    type: string
+  Wait:
+    type: integer
+    format: int64
+  WaitUntil:
+    type: string
+    format: date-time
+  NextEval:
+    type: string
+  PreviousEval:
+    type: string
+  BlockedEval:
+    type: string
+  FailedTgAllocs:
+    type: object
+    additionalProperties:
+      $ref: './AllocationMetric.yaml'
+  ClassEligibility:
+    type: object
+    additionalProperties:
+      type: boolean
+  EscapedComputedClass:
+    type: boolean
+  QuotaLimitReached:
+    type: string
+  AnnotatePlan:
+    type: boolean
+  QueuedAllocations:
+    type: object
+    additionalProperties:
+      type: integer
+      format: int32
+  SnapshotIndex:
+    $ref: './BigInteger.yaml'
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'
+  CreateTime:
+    type: integer
+    format: int64
+  ModifyTime:
+    type: integer
+    format: int64

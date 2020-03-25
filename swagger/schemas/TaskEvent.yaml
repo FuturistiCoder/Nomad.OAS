@@ -1,0 +1,61 @@
+type: object
+properties:
+  Type:
+    type: string
+  Time:
+    type: integer
+    format: int64
+  DisplayMessage:
+    type: string
+  Details:
+    type: object
+    additionalProperties:
+      type: string
+  FailsTask:
+    type: boolean
+  RestartReason:
+    type: string
+  SetupError:
+    type: string
+  DriverError:
+    type: string
+  DriverMessage:
+    type: string
+  ExitCode:
+    type: integer
+    format: int32
+  Signal:
+    type: integer
+    format: int32
+  Message:
+    type: string
+  KillReason:
+    type: string
+  KillTimeout:
+    type: integer
+    format: int64
+  KillError:
+    type: string
+  StartDelay:
+    type: integer
+    format: int64
+  DownloadError:
+    type: string
+  ValidationError:
+    type: string
+  DiskLimit:
+    type: integer
+    format: int64
+  DiskSize:
+    type: integer
+    format: int64
+  FailedSibling:
+    type: string
+  VaultError:
+    type: string
+  TaskSignalReason:
+    type: string
+  TaskSignal:
+    type: string
+  GenericSource:
+    type: string

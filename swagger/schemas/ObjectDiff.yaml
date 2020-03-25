@@ -1,0 +1,14 @@
+type: object
+properties:
+  Type:
+    type: string
+  Name:
+    type: string
+  Fields:
+    type: array
+    items:
+      $ref: './FieldDiff.yaml'
+  Objects:
+    type: array
+    items:
+      $ref: './ObjectDiff.yaml'

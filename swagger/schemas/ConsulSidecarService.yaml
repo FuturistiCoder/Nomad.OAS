@@ -1,0 +1,10 @@
+type: object
+properties:
+  Tags:
+    type: array
+    items:
+      type: string
+  Port:
+    type: string
+  Proxy:
+    $ref: './ConsulProxy.yaml'

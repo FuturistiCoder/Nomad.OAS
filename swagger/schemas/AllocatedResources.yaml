@@ -1,0 +1,8 @@
+type: object
+properties:
+  Tasks:
+    type: object
+    additionalProperties:
+      $ref: './AllocatedTaskResources.yaml'
+  Shared:
+    $ref: './AllocatedSharedResources.yaml'

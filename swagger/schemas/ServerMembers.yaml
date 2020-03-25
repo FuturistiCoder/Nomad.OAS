@@ -1,0 +1,12 @@
+type: object
+properties:
+  ServerName:
+    type: string
+  ServerRegion:
+    type: string
+  ServerDc:
+    type: string
+  Members:
+    type: array
+    items:
+      $ref: './AgentMember.yaml'

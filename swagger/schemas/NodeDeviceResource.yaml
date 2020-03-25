@@ -1,0 +1,16 @@
+type: object
+properties:
+  Vendor:
+    type: string
+  Type:
+    type: string
+  Name:
+    type: string
+  Instances:
+    type: array
+    items:
+      $ref: './NodeDevice.yaml'
+  Attributes:
+    type: object
+    additionalProperties:
+      $ref: './Attribute.yaml'

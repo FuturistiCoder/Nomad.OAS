@@ -1,0 +1,5 @@
+type: object
+properties:
+  DiskMb:
+    type: integer
+    format: int64

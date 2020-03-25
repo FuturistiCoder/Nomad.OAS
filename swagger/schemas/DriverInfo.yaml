@@ -1,0 +1,15 @@
+type: object
+properties:
+  Attributes:
+    type: object
+    additionalProperties:
+      type: string
+  Detected:
+    type: boolean
+  Healthy:
+    type: boolean
+  HealthDescription:
+    type: string
+  UpdateTime:
+    type: string
+    format: date-time

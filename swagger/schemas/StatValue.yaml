@@ -1,0 +1,20 @@
+type: object
+properties:
+  FloatNumeratorVal:
+    $ref: './Double.yaml'
+  FloatDenominatorVal:
+    $ref: './Double.yaml'
+  IntNumeratorVal:
+    type: integer
+    format: int64
+  IntDenominatorVal:
+    type: integer
+    format: int64
+  StringVal:
+    type: string
+  BoolVal:
+    type: boolean
+  Unit:
+    type: string
+  Desc:
+    type: string

@@ -1,0 +1,28 @@
+type: object
+properties:
+  Id:
+    type: string
+  Name:
+    type: string
+  Address:
+    type: string
+  SerfStatus:
+    type: string
+  Version:
+    type: string
+  Leader:
+    type: boolean
+  LastContact:
+    type: integer
+    format: int64
+  LastTerm:
+    $ref: './BigInteger.yaml'
+  LastIndex:
+    $ref: './BigInteger.yaml'
+  Healthy:
+    type: boolean
+  Voter:
+    type: boolean
+  StableSince:
+    type: string
+    format: date-time

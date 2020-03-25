@@ -1,0 +1,27 @@
+type: object
+properties:
+  Name:
+    type: string
+  Addr:
+    type: string
+  Port:
+    type: integer
+    format: int32
+  Tags:
+    type: object
+    additionalProperties:
+      type: string
+  Status:
+    type: string
+  ProtocolMin:
+    $ref: './Byte.yaml'
+  ProtocolMax:
+    $ref: './Byte.yaml'
+  ProtocolCur:
+    $ref: './Byte.yaml'
+  DelegateMin:
+    $ref: './Byte.yaml'
+  DelegateMax:
+    $ref: './Byte.yaml'
+  DelegateCur:
+    $ref: './Byte.yaml'

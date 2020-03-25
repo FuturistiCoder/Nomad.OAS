@@ -1,0 +1,17 @@
+{
+  "name": "nomad-swagger",
+  "version": "0.10.4",
+  "description": "nomad swagger openapi specification",
+  "author": "FuturistiCoder",
+  "license": "MIT",
+  "scripts": {
+    "validate": "swagger-cli validate swagger.yaml",
+    "clean": "rm -r dist/*",
+    "bundle": "swagger-cli bundle swagger/swagger.yaml -o dist/swagger.json",
+    "generate-csharp": "autorest-beta --v3 --input-file=dist/swagger.json --csharp --fluent --add-credentials --use-datetimeoffset --output-folder=client/csharp/Nomad.Net/generated --namespace=HashiCorp.Nomad"
+  },
+  "devDependencies": {
+    "@apidevtools/swagger-cli": "^4.0.2",
+    "@autorest/autorest": "^3.0.6187"
+  }
+}

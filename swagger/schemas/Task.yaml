@@ -1,0 +1,64 @@
+type: object
+properties:
+  Name:
+    type: string
+  Driver:
+    type: string
+  User:
+    type: string
+  Config:
+    type: object
+    additionalProperties:
+      type: object
+  Constraints:
+    type: array
+    items:
+      $ref: './Constraint.yaml'
+  Affinities:
+    type: array
+    items:
+      $ref: './Affinity.yaml'
+  Env:
+    type: object
+    additionalProperties:
+      type: string
+  Services:
+    type: array
+    items:
+      $ref: './Service.yaml'
+  Resources:
+    $ref: './Resources.yaml'
+  Meta:
+    type: object
+    additionalProperties:
+      type: string
+  KillTimeout:
+    type: integer
+    format: int64
+  LogConfig:
+    $ref: './LogConfig.yaml'
+  Artifacts:
+    type: array
+    items:
+      $ref: './TaskArtifact.yaml'
+  Vault:
+    $ref: './Vault.yaml'
+  Templates:
+    type: array
+    items:
+      $ref: './Template.yaml'
+  DispatchPayload:
+    $ref: './DispatchPayloadConfig.yaml'
+  VolumeMounts:
+    type: array
+    items:
+      $ref: './VolumeMount.yaml'
+  Leader:
+    type: boolean
+  ShutdownDelay:
+    type: integer
+    format: int64
+  KillSignal:
+    type: string
+  Kind:
+    type: string

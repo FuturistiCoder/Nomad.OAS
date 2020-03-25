@@ -1,0 +1,8 @@
+type: object
+properties:
+  MaxFiles:
+    type: integer
+    format: int32
+  MaxFileSizeMb:
+    type: integer
+    format: int32

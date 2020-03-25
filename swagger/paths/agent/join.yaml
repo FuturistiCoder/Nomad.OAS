@@ -1,0 +1,10 @@
+post:
+  summary: Causes the agent to join a cluster by joining the gossip pool at one of the given addresses
+  operationId: join
+  tags:
+    - agent
+  parameters:
+    - $ref: '../../parameters/query/addresses.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/JoinResponse.yaml'

@@ -1,0 +1,12 @@
+type: object
+properties:
+  Matches:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        type: string
+  Truncations:
+    type: object
+    additionalProperties:
+      type: boolean

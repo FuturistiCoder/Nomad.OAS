@@ -1,0 +1,10 @@
+type: object
+properties:
+  Total:
+    $ref: './BigInteger.yaml'
+  Available:
+    $ref: './BigInteger.yaml'
+  Used:
+    $ref: './BigInteger.yaml'
+  Free:
+    $ref: './BigInteger.yaml'

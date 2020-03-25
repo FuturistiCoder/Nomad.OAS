@@ -1,0 +1,54 @@
+type: object
+properties:
+  NodesEvaluated:
+    type: integer
+    format: int32
+  NodesFiltered:
+    type: integer
+    format: int32
+  NodesAvailable:
+    type: object
+    additionalProperties:
+      type: integer
+      format: int32
+  ClassFiltered:
+    type: object
+    additionalProperties:
+      type: integer
+      format: int32
+  ConstraintFiltered:
+    type: object
+    additionalProperties:
+      type: integer
+      format: int32
+  NodesExhausted:
+    type: integer
+    format: int32
+  ClassExhausted:
+    type: object
+    additionalProperties:
+      type: integer
+      format: int32
+  DimensionExhausted:
+    type: object
+    additionalProperties:
+      type: integer
+      format: int32
+  QuotaExhausted:
+    type: array
+    items:
+      type: string
+  Scores:
+    type: object
+    additionalProperties:
+      $ref: './Double.yaml'
+  AllocationTime:
+    type: integer
+    format: int64
+  CoalescedFailures:
+    type: integer
+    format: int32
+  ScoreMetaData:
+    type: array
+    items:
+      $ref: './NodeScoreMeta.yaml'

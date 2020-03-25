@@ -1,0 +1,16 @@
+type: object
+properties:
+  Name:
+    type: string
+  IsDir:
+    type: boolean
+  Size:
+    type: integer
+    format: int64
+  FileMode:
+    type: string
+  ModTime:
+    type: string
+    format: date-time
+  ContentType:
+    type: string

@@ -1,0 +1,12 @@
+type: object
+properties:
+  Payload:
+    type: string
+  MetaRequired:
+    type: array
+    items:
+      type: string
+  MetaOptional:
+    type: array
+    items:
+      type: string

@@ -1,0 +1,12 @@
+type: object
+properties:
+  Vendor:
+    type: string
+  Type:
+    type: string
+  Name:
+    type: string
+  InstanceStats:
+    type: object
+    additionalProperties:
+      $ref: './DeviceStats.yaml'

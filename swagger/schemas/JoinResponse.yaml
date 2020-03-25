@@ -1,0 +1,6 @@
+type: object
+properties:
+  error:
+    type: string
+  num_joined:
+    type: integer

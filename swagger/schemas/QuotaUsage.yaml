@@ -1,0 +1,12 @@
+type: object
+properties:
+  Name:
+    type: string
+  Used:
+    type: object
+    additionalProperties:
+      $ref: './QuotaLimit.yaml'
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

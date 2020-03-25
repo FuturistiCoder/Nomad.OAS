@@ -1,0 +1,4 @@
+type: object
+properties:
+  ReservedHostPorts:
+    type: string

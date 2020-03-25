@@ -1,0 +1,6 @@
+type: object
+properties:
+  Path:
+    type: string
+  ReadOnly:
+    type: boolean

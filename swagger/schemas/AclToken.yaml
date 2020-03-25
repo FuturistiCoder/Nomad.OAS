@@ -1,0 +1,23 @@
+type: object
+properties:
+  AccessorId:
+    type: string
+  SecretId:
+    type: string
+  Name:
+    type: string
+  Type:
+    type: string
+  Policies:
+    type: array
+    items:
+      type: string
+  Global:
+    type: boolean
+  CreateTime:
+    type: string
+    format: date-time
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

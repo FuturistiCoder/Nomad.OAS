@@ -1,0 +1,10 @@
+type: object
+properties:
+  Attribute:
+    type: string
+  Weight:
+    $ref: './Short.yaml'
+  SpreadTarget:
+    type: array
+    items:
+      $ref: './SpreadTarget.yaml'

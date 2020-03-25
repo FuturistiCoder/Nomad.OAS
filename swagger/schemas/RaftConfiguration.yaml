@@ -1,0 +1,8 @@
+type: object
+properties:
+  Servers:
+    type: array
+    items:
+      $ref: './RaftServer.yaml'
+  Index:
+    $ref: './BigInteger.yaml'

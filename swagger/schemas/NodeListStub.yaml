@@ -1,0 +1,30 @@
+type: object
+properties:
+  Address:
+    type: string
+  Id:
+    type: string
+  Datacenter:
+    type: string
+  Name:
+    type: string
+  NodeClass:
+    type: string
+  Version:
+    type: string
+  Drain:
+    type: boolean
+  SchedulingEligibility:
+    type: string
+  Status:
+    type: string
+  StatusDescription:
+    type: string
+  Drivers:
+    type: object
+    additionalProperties:
+      $ref: './DriverInfo.yaml'
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

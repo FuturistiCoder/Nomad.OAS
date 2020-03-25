@@ -1,0 +1,12 @@
+type: object
+properties:
+  Policies:
+    type: array
+    items:
+      type: string
+  Env:
+    type: boolean
+  ChangeMode:
+    type: string
+  ChangeSignal:
+    type: string

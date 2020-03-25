@@ -1,0 +1,36 @@
+type: object
+properties:
+  Id:
+    type: string
+  Name:
+    type: string
+  Tags:
+    type: array
+    items:
+      type: string
+  CanaryTags:
+    type: array
+    items:
+      type: string
+  EnableTagOverride:
+    type: boolean
+  PortLabel:
+    type: string
+  AddressMode:
+    type: string
+  Checks:
+    type: array
+    items:
+      $ref: './ServiceCheck.yaml'
+  CheckRestart:
+    $ref: './CheckRestart.yaml'
+  Connect:
+    $ref: './ConsulConnect.yaml'
+  Meta:
+    type: object
+    additionalProperties:
+      type: string
+  CanaryMeta:
+    type: object
+    additionalProperties:
+      type: string

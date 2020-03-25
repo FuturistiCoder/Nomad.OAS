@@ -1,0 +1,32 @@
+type: object
+properties:
+  Name:
+    type: string
+  Driver:
+    type: string
+  User:
+    type: string
+  Config:
+    type: object
+    additionalProperties:
+      type: object
+  Env:
+    type: object
+    additionalProperties:
+      type: string
+  Resources:
+    $ref: './Resources.yaml'
+  Meta:
+    type: object
+    additionalProperties:
+      type: string
+  KillTimeout:
+    type: integer
+    format: int64
+  LogConfig:
+    $ref: './LogConfig.yaml'
+  ShutdownDelay:
+    type: integer
+    format: int64
+  KillSignal:
+    type: string

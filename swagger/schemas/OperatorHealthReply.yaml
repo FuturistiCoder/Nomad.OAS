@@ -1,0 +1,11 @@
+type: object
+properties:
+  Healthy:
+    type: boolean
+  FailureTolerance:
+    type: integer
+    format: int32
+  Servers:
+    type: array
+    items:
+      $ref: './ServerHealth.yaml'

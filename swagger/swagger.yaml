@@ -1,0 +1,32 @@
+openapi: 3.0.2
+info:
+  version: 0.10.0
+  title: Nomad
+  description: Nomad OpenApi specification
+  license:
+    name: MIT
+paths:
+  # agent
+  /agent/force-leave:
+    $ref: './paths/agent/force-leave.yaml'
+  /agent/health:
+    $ref: './paths/agent/health.yaml'
+  /agent/join:
+    $ref: './paths/agent/join.yaml'
+  /agent/members:
+    $ref: './paths/agent/members.yaml'
+  /agent/self:
+    $ref: './paths/agent/self.yaml'
+  /agent/servers:
+    $ref: './paths/agent/servers.yaml'
+  /agent/monitor:
+    $ref: './paths/agent/monitor.yaml'
+  # todo: Agent Runtime Profiles agent/pprof/*
+  #
+components:
+  parameters:
+    $ref: './parameters/_index.yaml'
+  schemas:
+    $ref: './schemas/_index.yaml'
+  responses:
+    $ref: './responses/_index.yaml'

@@ -1,0 +1,25 @@
+type: object
+properties:
+  CleanupDeadServers:
+    type: boolean
+  LastContactThreshold:
+    type: integer
+    format: int64
+  MaxTrailingLogs:
+    $ref: './BigInteger.yaml'
+  MinQuorum:
+    type: integer
+    format: int64
+  ServerStabilizationTime:
+    type: integer
+    format: int64
+  EnableRedundancyZones:
+    type: boolean
+  DisableUpgradeMigration:
+    type: boolean
+  EnableCustomUpgrades:
+    type: boolean
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

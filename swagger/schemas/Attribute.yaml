@@ -1,0 +1,13 @@
+type: object
+properties:
+  Float:
+    $ref: './Double.yaml'
+  Int:
+    type: integer
+    format: int64
+  String:
+    type: string
+  Bool:
+    type: boolean
+  Unit:
+    type: string

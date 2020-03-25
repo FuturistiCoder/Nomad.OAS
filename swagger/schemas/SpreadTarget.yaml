@@ -1,0 +1,6 @@
+type: object
+properties:
+  Value:
+    type: string
+  Percent:
+    $ref: './Byte.yaml'

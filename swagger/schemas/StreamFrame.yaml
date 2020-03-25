@@ -1,0 +1,12 @@
+type: object
+properties:
+  Offset:
+    type: integer
+    format: int64
+  Data:
+    type: string
+    format: byte
+  File:
+    type: string
+  FileEvent:
+    type: string

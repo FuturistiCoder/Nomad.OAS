@@ -1,0 +1,8 @@
+type: object
+properties:
+  Native:
+    type: boolean
+  SidecarService:
+    $ref: './ConsulSidecarService.yaml'
+  SidecarTask:
+    $ref: './SidecarTask.yaml'

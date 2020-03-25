@@ -1,0 +1,26 @@
+type: object
+properties:
+  SourcePath:
+    type: string
+  DestPath:
+    type: string
+  EmbeddedTmpl:
+    type: string
+  ChangeMode:
+    type: string
+  ChangeSignal:
+    type: string
+  Splay:
+    type: integer
+    format: int64
+  Perms:
+    type: string
+  LeftDelim:
+    type: string
+  RightDelim:
+    type: string
+  Envvars:
+    type: boolean
+  VaultGrace:
+    type: integer
+    format: int64

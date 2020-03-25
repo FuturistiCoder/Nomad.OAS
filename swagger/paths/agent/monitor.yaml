@@ -1,0 +1,18 @@
+get:
+  summary: Streams logs from a specific Nomad server node
+  operationId: streamLogs
+  tags:
+    - agent
+  parameters:
+    - $ref: '../../parameters/query/log_level.yaml'
+    - $ref: '../../parameters/query/node_id.yaml'
+    - $ref: '../../parameters/query/server_id.yaml'
+    - $ref: '../../parameters/query/json_format.yaml'
+    - $ref: '../../parameters/query/plain_format.yaml'
+  responses:
+    '200':
+      description: agent health response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/StreamFrame.yaml'

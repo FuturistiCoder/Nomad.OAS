@@ -1,0 +1,21 @@
+type: object
+properties:
+  JobModifyIndex:
+    $ref: './BigInteger.yaml'
+  CreatedEvals:
+    type: array
+    items:
+      $ref: './Evaluation.yaml'
+  Diff:
+    $ref: './JobDiff.yaml'
+  Annotations:
+    $ref: './PlanAnnotations.yaml'
+  FailedTgAllocs:
+    type: object
+    additionalProperties:
+      $ref: './AllocationMetric.yaml'
+  NextPeriodicLaunch:
+    type: string
+    format: date-time
+  Warnings:
+    type: string

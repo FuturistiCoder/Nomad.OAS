@@ -1,0 +1,11 @@
+type: object
+properties:
+  Healthy:
+    type: boolean
+  Timestamp:
+    type: string
+    format: date-time
+  Canary:
+    type: boolean
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

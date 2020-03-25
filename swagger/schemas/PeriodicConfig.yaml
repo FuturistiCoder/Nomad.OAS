@@ -1,0 +1,12 @@
+type: object
+properties:
+  Enabled:
+    type: boolean
+  Spec:
+    type: string
+  SpecType:
+    type: string
+  ProhibitOverlap:
+    type: boolean
+  TimeZone:
+    type: string

@@ -1,0 +1,15 @@
+type: object
+properties:
+  Message:
+    type: string
+  Subsystem:
+    type: string
+  Details:
+    type: object
+    additionalProperties:
+      type: string
+  Timestamp:
+    type: string
+    format: date-time
+  CreateIndex:
+    $ref: './BigInteger.yaml'

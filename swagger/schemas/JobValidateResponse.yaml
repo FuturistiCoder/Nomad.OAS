@@ -1,0 +1,12 @@
+type: object
+properties:
+  DriverConfigValidated:
+    type: boolean
+  ValidationErrors:
+    type: array
+    items:
+      type: string
+  Error:
+    type: string
+  Warnings:
+    type: string

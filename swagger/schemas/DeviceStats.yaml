@@ -1,0 +1,9 @@
+type: object
+properties:
+  Summary:
+    $ref: './StatValue.yaml'
+  Stats:
+    $ref: './StatObject.yaml'
+  Timestamp:
+    type: string
+    format: date-time

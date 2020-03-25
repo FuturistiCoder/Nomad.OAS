@@ -1,0 +1,13 @@
+type: object
+properties:
+  MaxParallel:
+    type: integer
+    format: int32
+  HealthCheck:
+    type: string
+  MinHealthyTime:
+    type: integer
+    format: int64
+  HealthyDeadline:
+    type: integer
+    format: int64

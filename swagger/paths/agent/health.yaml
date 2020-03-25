@@ -1,0 +1,12 @@
+get:
+  summary: Performs a basic healthcheck
+  operationId: getHealth
+  tags:
+    - agent
+  responses:
+    '200':
+      description: agent health response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/AgentHealthResponse.yaml'

@@ -1,0 +1,6 @@
+name: node
+in: query
+description: the name of the node
+required: true
+schema:
+  type: string

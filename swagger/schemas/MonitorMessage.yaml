@@ -1,0 +1,7 @@
+type: object
+properties:
+  Level:
+    type: integer
+    format: int32
+  Message:
+    type: string

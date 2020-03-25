@@ -1,0 +1,14 @@
+type: object
+properties:
+  Type:
+    type: string
+  Name:
+    type: string
+  Old:
+    type: string
+  New:
+    type: string
+  Annotations:
+    type: array
+    items:
+      type: string

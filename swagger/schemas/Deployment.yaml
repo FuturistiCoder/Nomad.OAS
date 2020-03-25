@@ -1,0 +1,28 @@
+type: object
+properties:
+  Id:
+    type: string
+  Namespace:
+    type: string
+  JobId:
+    type: string
+  JobVersion:
+    $ref: './BigInteger.yaml'
+  JobModifyIndex:
+    $ref: './BigInteger.yaml'
+  JobSpecModifyIndex:
+    $ref: './BigInteger.yaml'
+  JobCreateIndex:
+    $ref: './BigInteger.yaml'
+  TaskGroups:
+    type: object
+    additionalProperties:
+      $ref: './DeploymentState.yaml'
+  Status:
+    type: string
+  StatusDescription:
+    type: string
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

@@ -1,0 +1,12 @@
+type: object
+properties:
+  GetterSource:
+    type: string
+  GetterOptions:
+    type: object
+    additionalProperties:
+      type: string
+  GetterMode:
+    type: string
+  RelativeDest:
+    type: string

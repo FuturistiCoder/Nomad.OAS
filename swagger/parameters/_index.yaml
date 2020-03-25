@@ -1,0 +1,5 @@
+#query
+addresses:
+  $ref: './query/addresses.yaml'
+node:
+  $ref: './query/node.yaml'

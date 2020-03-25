@@ -1,0 +1,16 @@
+type: object
+properties:
+  Device:
+    type: string
+  Mountpoint:
+    type: string
+  Size:
+    $ref: './BigInteger.yaml'
+  Used:
+    $ref: './BigInteger.yaml'
+  Available:
+    $ref: './BigInteger.yaml'
+  UsedPercent:
+    $ref: './Double.yaml'
+  InodesUsedPercent:
+    $ref: './Double.yaml'

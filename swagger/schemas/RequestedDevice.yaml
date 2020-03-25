@@ -1,0 +1,14 @@
+type: object
+properties:
+  Name:
+    type: string
+  Count:
+    $ref: './BigInteger.yaml'
+  Constraints:
+    type: array
+    items:
+      $ref: './Constraint.yaml'
+  Affinities:
+    type: array
+    items:
+      $ref: './Affinity.yaml'

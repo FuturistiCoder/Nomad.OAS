@@ -1,0 +1,10 @@
+type: object
+properties:
+  Cpu:
+    type: string
+  User:
+    $ref: './Double.yaml'
+  System:
+    $ref: './Double.yaml'
+  Idle:
+    $ref: './Double.yaml'

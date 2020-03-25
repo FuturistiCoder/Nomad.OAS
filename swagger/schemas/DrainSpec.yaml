@@ -1,0 +1,7 @@
+type: object
+properties:
+  Deadline:
+    type: integer
+    format: int64
+  IgnoreSystemJobs:
+    type: boolean

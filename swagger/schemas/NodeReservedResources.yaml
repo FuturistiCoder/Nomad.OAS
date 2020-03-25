@@ -1,0 +1,10 @@
+type: object
+properties:
+  Cpu:
+    $ref: './NodeReservedCpuResources.yaml'
+  Memory:
+    $ref: './NodeReservedMemoryResources.yaml'
+  Disk:
+    $ref: './NodeReservedDiskResources.yaml'
+  Networks:
+    $ref: './NodeReservedNetworkResources.yaml'

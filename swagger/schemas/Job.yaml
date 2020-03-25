@@ -1,0 +1,81 @@
+type: object
+properties:
+  Stop:
+    type: boolean
+  Region:
+    type: string
+  Namespace:
+    type: string
+  Id:
+    type: string
+  ParentId:
+    type: string
+  Name:
+    type: string
+  Type:
+    type: string
+  Priority:
+    type: integer
+    format: int32
+  AllAtOnce:
+    type: boolean
+  Datacenters:
+    type: array
+    items:
+      type: string
+  Constraints:
+    type: array
+    items:
+      $ref: './Constraint.yaml'
+  Affinities:
+    type: array
+    items:
+      $ref: './Affinity.yaml'
+  TaskGroups:
+    type: array
+    items:
+      $ref: './TaskGroup.yaml'
+  Update:
+    $ref: './UpdateStrategy.yaml'
+  Spreads:
+    type: array
+    items:
+      $ref: './Spread.yaml'
+  Periodic:
+    $ref: './PeriodicConfig.yaml'
+  ParameterizedJob:
+    $ref: './ParameterizedJobConfig.yaml'
+  Dispatched:
+    type: boolean
+  Payload:
+    type: string
+    format: byte
+  Reschedule:
+    $ref: './ReschedulePolicy.yaml'
+  Migrate:
+    $ref: './MigrateStrategy.yaml'
+  Meta:
+    type: object
+    additionalProperties:
+      type: string
+  ConsulToken:
+    type: string
+  VaultToken:
+    type: string
+  Status:
+    type: string
+  StatusDescription:
+    type: string
+  Stable:
+    type: boolean
+  Version:
+    $ref: './BigInteger.yaml'
+  SubmitTime:
+    type: integer
+    format: int64
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'
+  JobModifyIndex:
+    $ref: './BigInteger.yaml'

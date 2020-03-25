@@ -1,0 +1,11 @@
+type: object
+properties:
+  Pending:
+    type: integer
+    format: int64
+  Running:
+    type: integer
+    format: int64
+  Dead:
+    type: integer
+    format: int64

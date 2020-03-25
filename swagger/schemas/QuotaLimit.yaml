@@ -1,0 +1,9 @@
+type: object
+properties:
+  Region:
+    type: string
+  RegionLimit:
+    $ref: './Resources.yaml'
+  Hash:
+    type: string
+    format: byte

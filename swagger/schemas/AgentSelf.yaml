@@ -1,0 +1,14 @@
+type: object
+properties:
+  Config:
+    type: object
+    additionalProperties:
+      type: object
+  Member:
+    $ref: './AgentMember.yaml'
+  Stats:
+    type: object
+    additionalProperties:
+      type: object
+      additionalProperties:
+        type: string

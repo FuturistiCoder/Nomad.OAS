@@ -1,0 +1,30 @@
+get:
+  summary: Queries an agent in client mode for its list of known servers
+  operationId: getServers
+  tags:
+    - agent
+  responses:
+    '200':
+      description: servers
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+post:
+  summary: Updates the list of known servers to the given addresses, replacing all previous addresses
+  operationId: updateServers
+  tags:
+    - agent
+  parameters:
+    - $ref: '../../parameters/query/addresses.yaml'
+  responses:
+    '200':
+      description: servers
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string

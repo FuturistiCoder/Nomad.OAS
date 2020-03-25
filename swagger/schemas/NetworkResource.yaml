@@ -1,0 +1,21 @@
+type: object
+properties:
+  Mode:
+    type: string
+  Device:
+    type: string
+  Cidr:
+    type: string
+  Ip:
+    type: string
+  MBits:
+    type: integer
+    format: int32
+  ReservedPorts:
+    type: array
+    items:
+      $ref: './Port.yaml'
+  DynamicPorts:
+    type: array
+    items:
+      $ref: './Port.yaml'

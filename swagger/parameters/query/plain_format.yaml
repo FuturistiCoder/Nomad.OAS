@@ -1,0 +1,6 @@
+name: plain
+in: query
+description: is plain text format
+required: false
+schema:
+  type: boolean

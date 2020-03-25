@@ -1,0 +1,78 @@
+type: object
+properties:
+  Id:
+    type: string
+  Namespace:
+    type: string
+  EvalId:
+    type: string
+  Name:
+    type: string
+  NodeId:
+    type: string
+  NodeName:
+    type: string
+  JobId:
+    type: string
+  Job:
+    $ref: './Job.yaml'
+  TaskGroup:
+    type: string
+  Resources:
+    $ref: './Resources.yaml'
+  TaskResources:
+    type: object
+    additionalProperties:
+      $ref: './Resources.yaml'
+  AllocatedResources:
+    $ref: './AllocatedResources.yaml'
+  Services:
+    type: object
+    additionalProperties:
+      type: string
+  Metrics:
+    $ref: './AllocationMetric.yaml'
+  DesiredStatus:
+    type: string
+  DesiredDescription:
+    type: string
+  DesiredTransition:
+    $ref: './DesiredTransition.yaml'
+  ClientStatus:
+    type: string
+  ClientDescription:
+    type: string
+  TaskStates:
+    type: object
+    additionalProperties:
+      $ref: './TaskState.yaml'
+  DeploymentId:
+    type: string
+  DeploymentStatus:
+    $ref: './AllocDeploymentStatus.yaml'
+  FollowupEvalId:
+    type: string
+  PreviousAllocation:
+    type: string
+  NextAllocation:
+    type: string
+  RescheduleTracker:
+    $ref: './RescheduleTracker.yaml'
+  PreemptedAllocations:
+    type: array
+    items:
+      type: string
+  PreemptedByAllocation:
+    type: string
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'
+  AllocModifyIndex:
+    $ref: './BigInteger.yaml'
+  CreateTime:
+    type: integer
+    format: int64
+  ModifyTime:
+    type: integer
+    format: int64

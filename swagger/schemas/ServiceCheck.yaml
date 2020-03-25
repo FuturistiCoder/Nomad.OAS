@@ -1,0 +1,48 @@
+type: object
+properties:
+  Id:
+    type: string
+  Name:
+    type: string
+  Type:
+    type: string
+  Command:
+    type: string
+  Args:
+    type: array
+    items:
+      type: string
+  Path:
+    type: string
+  Protocol:
+    type: string
+  PortLabel:
+    type: string
+  AddressMode:
+    type: string
+  Interval:
+    type: integer
+    format: int64
+  Timeout:
+    type: integer
+    format: int64
+  InitialStatus:
+    type: string
+  TlsSkipVerify:
+    type: boolean
+  Header:
+    type: object
+    additionalProperties:
+      type: array
+      items:
+        type: string
+  Method:
+    type: string
+  CheckRestart:
+    $ref: './CheckRestart.yaml'
+  GrpcService:
+    type: string
+  GrpcUseTls:
+    type: boolean
+  TaskName:
+    type: string

@@ -1,0 +1,12 @@
+get:
+  summary: Queries for information about the agent we are connected to
+  operationId: getSelf
+  tags:
+    - agent
+  responses:
+    '200':
+      description: agent self
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/AgentSelf.yaml'

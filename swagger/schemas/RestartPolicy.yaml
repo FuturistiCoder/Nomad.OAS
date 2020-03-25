@@ -1,0 +1,13 @@
+type: object
+properties:
+  Interval:
+    type: integer
+    format: int64
+  Attempts:
+    type: integer
+    format: int32
+  Delay:
+    type: integer
+    format: int64
+  Mode:
+    type: string

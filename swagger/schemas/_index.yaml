@@ -1,0 +1,276 @@
+﻿AclPolicy:
+  $ref: './AclPolicy.yaml'
+AclPolicyListStub:
+  $ref: './AclPolicyListStub.yaml'
+AclToken:
+  $ref: './AclToken.yaml'
+AclTokenListStub:
+  $ref: './AclTokenListStub.yaml'
+Affinity:
+  $ref: './Affinity.yaml'
+AgentHealth:
+  $ref: './AgentHealth.yaml'
+AgentHealthResponse:
+  $ref: './AgentHealthResponse.yaml'
+AgentMember:
+  $ref: './AgentMember.yaml'
+AgentSelf:
+  $ref: './AgentSelf.yaml'
+AllocatedCpuResources:
+  $ref: './AllocatedCpuResources.yaml'
+AllocatedMemoryResources:
+  $ref: './AllocatedMemoryResources.yaml'
+AllocatedResources:
+  $ref: './AllocatedResources.yaml'
+AllocatedSharedResources:
+  $ref: './AllocatedSharedResources.yaml'
+AllocatedTaskResources:
+  $ref: './AllocatedTaskResources.yaml'
+Allocation:
+  $ref: './Allocation.yaml'
+AllocationListStub:
+  $ref: './AllocationListStub.yaml'
+AllocationMetric:
+  $ref: './AllocationMetric.yaml'
+AllocDeploymentStatus:
+  $ref: './AllocDeploymentStatus.yaml'
+AllocFileInfo:
+  $ref: './AllocFileInfo.yaml'
+AllocResourceUsage:
+  $ref: './AllocResourceUsage.yaml'
+AllocStopResponse:
+  $ref: './AllocStopResponse.yaml'
+Attribute:
+  $ref: './Attribute.yaml'
+AutopilotConfiguration:
+  $ref: './AutopilotConfiguration.yaml'
+BigInteger:
+  $ref: './BigInteger.yaml'
+Byte:
+  $ref: './Byte.yaml'
+CheckRestart:
+  $ref: './CheckRestart.yaml'
+Constraint:
+  $ref: './Constraint.yaml'
+ConsulConnect:
+  $ref: './ConsulConnect.yaml'
+ConsulProxy:
+  $ref: './ConsulProxy.yaml'
+ConsulSidecarService:
+  $ref: './ConsulSidecarService.yaml'
+ConsulUpstream:
+  $ref: './ConsulUpstream.yaml'
+CpuStats:
+  $ref: './CpuStats.yaml'
+Deployment:
+  $ref: './Deployment.yaml'
+DeploymentState:
+  $ref: './DeploymentState.yaml'
+DeploymentUpdateResponse:
+  $ref: './DeploymentUpdateResponse.yaml'
+DesiredTransition:
+  $ref: './DesiredTransition.yaml'
+DesiredUpdates:
+  $ref: './DesiredUpdates.yaml'
+DeviceGroupStats:
+  $ref: './DeviceGroupStats.yaml'
+DeviceStats:
+  $ref: './DeviceStats.yaml'
+DispatchPayloadConfig:
+  $ref: './DispatchPayloadConfig.yaml'
+Double:
+  $ref: './Double.yaml'
+DrainSpec:
+  $ref: './DrainSpec.yaml'
+DrainStrategy:
+  $ref: './DrainStrategy.yaml'
+DriverInfo:
+  $ref: './DriverInfo.yaml'
+EphemeralDisk:
+  $ref: './EphemeralDisk.yaml'
+Evaluation:
+  $ref: './Evaluation.yaml'
+FieldDiff:
+  $ref: './FieldDiff.yaml'
+HostCpuStats:
+  $ref: './HostCpuStats.yaml'
+HostDiskStats:
+  $ref: './HostDiskStats.yaml'
+HostMemoryStats:
+  $ref: './HostMemoryStats.yaml'
+HostStats:
+  $ref: './HostStats.yaml'
+HostVolumeInfo:
+  $ref: './HostVolumeInfo.yaml'
+Job:
+  $ref: './Job.yaml'
+JobChildrenSummary:
+  $ref: './JobChildrenSummary.yaml'
+JobDiff:
+  $ref: './JobDiff.yaml'
+JobDispatchResponse:
+  $ref: './JobDispatchResponse.yaml'
+JobListStub:
+  $ref: './JobListStub.yaml'
+JobPlanResponse:
+  $ref: './JobPlanResponse.yaml'
+JobRegisterResponse:
+  $ref: './JobRegisterResponse.yaml'
+JobStabilityResponse:
+  $ref: './JobStabilityResponse.yaml'
+JobSummary:
+  $ref: './JobSummary.yaml'
+JobValidateResponse:
+  $ref: './JobValidateResponse.yaml'
+JoinResponse:
+  $ref: './JoinResponse.yaml'
+KeyringResponse:
+  $ref: './KeyringResponse.yaml'
+LogConfig:
+  $ref: './LogConfig.yaml'
+MemoryStats:
+  $ref: './MemoryStats.yaml'
+MigrateStrategy:
+  $ref: './MigrateStrategy.yaml'
+MonitorMessage:
+  $ref: './MonitorMessage.yaml'
+Namespace:
+  $ref: './Namespace.yaml'
+NetworkResource:
+  $ref: './NetworkResource.yaml'
+Node:
+  $ref: './Node.yaml'
+NodeCpuResources:
+  $ref: './NodeCpuResources.yaml'
+NodeDevice:
+  $ref: './NodeDevice.yaml'
+NodeDeviceLocality:
+  $ref: './NodeDeviceLocality.yaml'
+NodeDeviceResource:
+  $ref: './NodeDeviceResource.yaml'
+NodeDiskResources:
+  $ref: './NodeDiskResources.yaml'
+NodeDrainUpdateResponse:
+  $ref: './NodeDrainUpdateResponse.yaml'
+NodeEligibilityUpdateResponse:
+  $ref: './NodeEligibilityUpdateResponse.yaml'
+NodeEvent:
+  $ref: './NodeEvent.yaml'
+NodeListStub:
+  $ref: './NodeListStub.yaml'
+NodeMemoryResources:
+  $ref: './NodeMemoryResources.yaml'
+NodeReservedCpuResources:
+  $ref: './NodeReservedCpuResources.yaml'
+NodeReservedDiskResources:
+  $ref: './NodeReservedDiskResources.yaml'
+NodeReservedMemoryResources:
+  $ref: './NodeReservedMemoryResources.yaml'
+NodeReservedNetworkResources:
+  $ref: './NodeReservedNetworkResources.yaml'
+NodeReservedResources:
+  $ref: './NodeReservedResources.yaml'
+NodeResources:
+  $ref: './NodeResources.yaml'
+NodeScoreMeta:
+  $ref: './NodeScoreMeta.yaml'
+ObjectDiff:
+  $ref: './ObjectDiff.yaml'
+OperatorHealthReply:
+  $ref: './OperatorHealthReply.yaml'
+ParameterizedJobConfig:
+  $ref: './ParameterizedJobConfig.yaml'
+PeriodicConfig:
+  $ref: './PeriodicConfig.yaml'
+PlanAnnotations:
+  $ref: './PlanAnnotations.yaml'
+Port:
+  $ref: './Port.yaml'
+PreemptionConfig:
+  $ref: './PreemptionConfig.yaml'
+QuotaLimit:
+  $ref: './QuotaLimit.yaml'
+QuotaSpec:
+  $ref: './QuotaSpec.yaml'
+QuotaUsage:
+  $ref: './QuotaUsage.yaml'
+RaftConfiguration:
+  $ref: './RaftConfiguration.yaml'
+RaftServer:
+  $ref: './RaftServer.yaml'
+RequestedDevice:
+  $ref: './RequestedDevice.yaml'
+RescheduleEvent:
+  $ref: './RescheduleEvent.yaml'
+ReschedulePolicy:
+  $ref: './ReschedulePolicy.yaml'
+RescheduleTracker:
+  $ref: './RescheduleTracker.yaml'
+Resources:
+  $ref: './Resources.yaml'
+ResourceUsage:
+  $ref: './ResourceUsage.yaml'
+RestartPolicy:
+  $ref: './RestartPolicy.yaml'
+SchedulerConfiguration:
+  $ref: './SchedulerConfiguration.yaml'
+SchedulerConfigurationResponse:
+  $ref: './SchedulerConfigurationResponse.yaml'
+SchedulerSetConfigurationResponse:
+  $ref: './SchedulerSetConfigurationResponse.yaml'
+SearchResponse:
+  $ref: './SearchResponse.yaml'
+SentinelPolicy:
+  $ref: './SentinelPolicy.yaml'
+SentinelPolicyListStub:
+  $ref: './SentinelPolicyListStub.yaml'
+ServerHealth:
+  $ref: './ServerHealth.yaml'
+ServerMembers:
+  $ref: './ServerMembers.yaml'
+Service:
+  $ref: './Service.yaml'
+ServiceCheck:
+  $ref: './ServiceCheck.yaml'
+Short:
+  $ref: './Short.yaml'
+SidecarTask:
+  $ref: './SidecarTask.yaml'
+Spread:
+  $ref: './Spread.yaml'
+SpreadTarget:
+  $ref: './SpreadTarget.yaml'
+StatObject:
+  $ref: './StatObject.yaml'
+StatValue:
+  $ref: './StatValue.yaml'
+StreamFrame:
+  $ref: './StreamFrame.yaml'
+Task:
+  $ref: './Task.yaml'
+TaskArtifact:
+  $ref: './TaskArtifact.yaml'
+TaskDiff:
+  $ref: './TaskDiff.yaml'
+TaskEvent:
+  $ref: './TaskEvent.yaml'
+TaskGroup:
+  $ref: './TaskGroup.yaml'
+TaskGroupDiff:
+  $ref: './TaskGroupDiff.yaml'
+TaskGroupSummary:
+  $ref: './TaskGroupSummary.yaml'
+TaskResourceUsage:
+  $ref: './TaskResourceUsage.yaml'
+TaskState:
+  $ref: './TaskState.yaml'
+Template:
+  $ref: './Template.yaml'
+UpdateStrategy:
+  $ref: './UpdateStrategy.yaml'
+Vault:
+  $ref: './Vault.yaml'
+VolumeMount:
+  $ref: './VolumeMount.yaml'
+VolumeRequest:
+  $ref: './VolumeRequest.yaml'

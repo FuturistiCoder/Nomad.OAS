@@ -1,0 +1,5 @@
+type: object
+properties:
+  MemoryMb:
+    type: integer
+    format: int64

@@ -1,0 +1,8 @@
+type: object
+properties:
+  PreemptionConfig:
+    $ref: './PreemptionConfig.yaml'
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

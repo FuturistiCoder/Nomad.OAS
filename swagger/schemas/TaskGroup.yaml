@@ -1,0 +1,52 @@
+type: object
+properties:
+  Name:
+    type: string
+  Count:
+    type: integer
+    format: int32
+  Constraints:
+    type: array
+    items:
+      $ref: './Constraint.yaml'
+  Affinities:
+    type: array
+    items:
+      $ref: './Affinity.yaml'
+  Tasks:
+    type: array
+    items:
+      $ref: './Task.yaml'
+  Spreads:
+    type: array
+    items:
+      $ref: './Spread.yaml'
+  Volumes:
+    type: object
+    additionalProperties:
+      $ref: './VolumeRequest.yaml'
+  RestartPolicy:
+    $ref: './RestartPolicy.yaml'
+  ReschedulePolicy:
+    $ref: './ReschedulePolicy.yaml'
+  EphemeralDisk:
+    $ref: './EphemeralDisk.yaml'
+  Update:
+    $ref: './UpdateStrategy.yaml'
+  Migrate:
+    $ref: './MigrateStrategy.yaml'
+  Networks:
+    type: array
+    items:
+      $ref: './NetworkResource.yaml'
+  Meta:
+    type: object
+    additionalProperties:
+      type: string
+  Services:
+    type: array
+    items:
+      $ref: './Service.yaml'
+  ShutdownDelay:
+    type: integer
+    format: int64

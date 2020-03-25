@@ -1,0 +1,21 @@
+type: object
+properties:
+  State:
+    type: string
+  Failed:
+    type: boolean
+  Restarts:
+    $ref: './BigInteger.yaml'
+  LastRestart:
+    type: string
+    format: date-time
+  StartedAt:
+    type: string
+    format: date-time
+  FinishedAt:
+    type: string
+    format: date-time
+  Events:
+    type: array
+    items:
+      $ref: './TaskEvent.yaml'

@@ -1,0 +1,8 @@
+description: join response
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/JoinResponse.yaml'
+
+
+

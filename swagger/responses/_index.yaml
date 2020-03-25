@@ -1,0 +1,4 @@
+JoinResponse:
+  $ref: './JoinResponse.yaml'
+NullResponse:
+  $ref: './NullResponse.yaml'

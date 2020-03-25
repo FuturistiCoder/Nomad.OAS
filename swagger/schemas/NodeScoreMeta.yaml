@@ -1,0 +1,10 @@
+type: object
+properties:
+  NodeId:
+    type: string
+  Scores:
+    type: object
+    additionalProperties:
+      $ref: './Double.yaml'
+  NormScore:
+    $ref: './Double.yaml'

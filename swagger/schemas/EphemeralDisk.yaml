@@ -1,0 +1,9 @@
+type: object
+properties:
+  Sticky:
+    type: boolean
+  Migrate:
+    type: boolean
+  SizeMb:
+    type: integer
+    format: int32

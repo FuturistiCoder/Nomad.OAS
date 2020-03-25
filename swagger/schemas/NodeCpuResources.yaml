@@ -1,0 +1,5 @@
+type: object
+properties:
+  CpuShares:
+    type: integer
+    format: int64

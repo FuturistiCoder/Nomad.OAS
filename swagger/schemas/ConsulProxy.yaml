@@ -1,0 +1,15 @@
+type: object
+properties:
+  LocalServiceAddress:
+    type: string
+  LocalServicePort:
+    type: integer
+    format: int32
+  Upstreams:
+    type: array
+    items:
+      $ref: './ConsulUpstream.yaml'
+  Config:
+    type: object
+    additionalProperties:
+      type: object

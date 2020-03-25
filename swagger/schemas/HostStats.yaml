@@ -1,0 +1,20 @@
+type: object
+properties:
+  Memory:
+    $ref: './HostMemoryStats.yaml'
+  Cpu:
+    type: array
+    items:
+      $ref: './HostCpuStats.yaml'
+  DiskStats:
+    type: array
+    items:
+      $ref: './HostDiskStats.yaml'
+  DeviceStats:
+    type: array
+    items:
+      $ref: './DeviceGroupStats.yaml'
+  Uptime:
+    $ref: './BigInteger.yaml'
+  CpuTicksConsumed:
+    $ref: './Double.yaml'

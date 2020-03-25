@@ -1,0 +1,7 @@
+type: object
+properties:
+  DestinationName:
+    type: string
+  LocalBindPort:
+    type: integer
+    format: int32

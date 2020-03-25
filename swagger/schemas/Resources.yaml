@@ -1,0 +1,22 @@
+type: object
+properties:
+  Cpu:
+    type: integer
+    format: int32
+  MemoryMb:
+    type: integer
+    format: int32
+  DiskMb:
+    type: integer
+    format: int32
+  Networks:
+    type: array
+    items:
+      $ref: './NetworkResource.yaml'
+  Devices:
+    type: array
+    items:
+      $ref: './RequestedDevice.yaml'
+  Iops:
+    type: integer
+    format: int32

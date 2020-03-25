@@ -1,0 +1,63 @@
+type: object
+properties:
+  Id:
+    type: string
+  Datacenter:
+    type: string
+  Name:
+    type: string
+  HttpAddr:
+    type: string
+  TlsEnabled:
+    type: boolean
+  Attributes:
+    type: object
+    additionalProperties:
+      type: string
+  Resources:
+    $ref: './Resources.yaml'
+  Reserved:
+    $ref: './Resources.yaml'
+  NodeResources:
+    $ref: './NodeResources.yaml'
+  ReservedResources:
+    $ref: './NodeReservedResources.yaml'
+  Links:
+    type: object
+    additionalProperties:
+      type: string
+  Meta:
+    type: object
+    additionalProperties:
+      type: string
+  NodeClass:
+    type: string
+  Drain:
+    type: boolean
+  DrainStrategy:
+    $ref: './DrainStrategy.yaml'
+  SchedulingEligibility:
+    type: string
+  Status:
+    type: string
+  StatusDescription:
+    type: string
+  StatusUpdatedAt:
+    type: integer
+    format: int64
+  Events:
+    type: array
+    items:
+      $ref: './NodeEvent.yaml'
+  Drivers:
+    type: object
+    additionalProperties:
+      $ref: './DriverInfo.yaml'
+  HostVolumes:
+    type: object
+    additionalProperties:
+      $ref: './HostVolumeInfo.yaml'
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

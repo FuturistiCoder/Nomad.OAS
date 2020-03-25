@@ -1,0 +1,6 @@
+name: json
+in: query
+description: is json format
+required: false
+schema:
+  type: boolean

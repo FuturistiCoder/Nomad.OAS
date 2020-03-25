@@ -1,0 +1,16 @@
+type: object
+properties:
+  Cpu:
+    $ref: './NodeCpuResources.yaml'
+  Memory:
+    $ref: './NodeMemoryResources.yaml'
+  Disk:
+    $ref: './NodeDiskResources.yaml'
+  Networks:
+    type: array
+    items:
+      $ref: './NetworkResource.yaml'
+  Devices:
+    type: array
+    items:
+      $ref: './NodeDeviceResource.yaml'

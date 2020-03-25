@@ -1,0 +1,10 @@
+type: object
+properties:
+  Limit:
+    type: integer
+    format: int32
+  Grace:
+    type: integer
+    format: int64
+  IgnoreWarnings:
+    type: boolean

@@ -1,0 +1,9 @@
+name: address
+in: query
+description: 'server address (ip:port)'
+explode: true
+required: true
+schema:
+  type: array
+  items:
+    type: string

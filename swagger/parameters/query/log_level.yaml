@@ -1,0 +1,6 @@
+name: log_level
+in: query
+description: log level
+required: false
+schema:
+  type: string

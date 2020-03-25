@@ -1,0 +1,18 @@
+type: object
+properties:
+  SystemMode:
+    $ref: './Double.yaml'
+  UserMode:
+    $ref: './Double.yaml'
+  TotalTicks:
+    $ref: './Double.yaml'
+  ThrottledPeriods:
+    $ref: './BigInteger.yaml'
+  ThrottledTime:
+    $ref: './BigInteger.yaml'
+  Percent:
+    $ref: './Double.yaml'
+  Measured:
+    type: array
+    items:
+      type: string

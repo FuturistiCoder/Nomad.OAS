@@ -1,0 +1,10 @@
+type: object
+properties:
+  DispatchedJobId:
+    type: string
+  EvalId:
+    type: string
+  EvalCreateIndex:
+    $ref: './BigInteger.yaml'
+  JobCreateIndex:
+    $ref: './BigInteger.yaml'

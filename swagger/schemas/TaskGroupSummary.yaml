@@ -1,0 +1,20 @@
+type: object
+properties:
+  Queued:
+    type: integer
+    format: int32
+  Complete:
+    type: integer
+    format: int32
+  Failed:
+    type: integer
+    format: int32
+  Running:
+    type: integer
+    format: int32
+  Starting:
+    type: integer
+    format: int32
+  Lost:
+    type: integer
+    format: int32

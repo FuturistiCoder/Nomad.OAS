@@ -1,0 +1,10 @@
+type: object
+properties:
+  EvalId:
+    type: string
+  EvalCreateIndex:
+    $ref: './BigInteger.yaml'
+  DeploymentModifyIndex:
+    $ref: './BigInteger.yaml'
+  RevertedJobVersion:
+    $ref: './BigInteger.yaml'

@@ -1,0 +1,10 @@
+type: object
+properties:
+  Nested:
+    type: object
+    additionalProperties:
+      $ref: './StatObject.yaml'
+  Attributes:
+    type: object
+    additionalProperties:
+      $ref: './StatValue.yaml'

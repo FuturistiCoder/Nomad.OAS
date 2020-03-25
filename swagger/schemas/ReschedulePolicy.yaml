@@ -1,0 +1,18 @@
+type: object
+properties:
+  Attempts:
+    type: integer
+    format: int32
+  Interval:
+    type: integer
+    format: int64
+  Delay:
+    type: integer
+    format: int64
+  DelayFunction:
+    type: string
+  MaxDelay:
+    type: integer
+    format: int64
+  Unlimited:
+    type: boolean

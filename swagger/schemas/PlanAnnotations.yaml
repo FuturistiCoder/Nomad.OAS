@@ -1,0 +1,10 @@
+type: object
+properties:
+  DesiredTgUpdates:
+    type: object
+    additionalProperties:
+      $ref: './DesiredUpdates.yaml'
+  PreemptedAllocs:
+    type: array
+    items:
+      $ref: './AllocationListStub.yaml'

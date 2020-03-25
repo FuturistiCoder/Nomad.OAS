@@ -1,0 +1,16 @@
+type: object
+properties:
+  JobId:
+    type: string
+  Namespace:
+    type: string
+  Summary:
+    type: object
+    additionalProperties:
+      $ref: './TaskGroupSummary.yaml'
+  Children:
+    $ref: './JobChildrenSummary.yaml'
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

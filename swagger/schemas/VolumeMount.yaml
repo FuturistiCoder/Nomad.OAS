@@ -1,0 +1,10 @@
+type: object
+properties:
+  Volume:
+    type: string
+  Destination:
+    type: string
+  ReadOnly:
+    type: boolean
+  PropagationMode:
+    type: string

@@ -1,0 +1,12 @@
+get:
+  summary: Queries for the known peers in the gossip pool
+  operationId: getMembers
+  tags:
+    - agent
+  responses:
+    '200':
+      description: server members
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/ServerMembers.yaml'

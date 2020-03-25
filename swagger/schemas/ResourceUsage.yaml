@@ -1,0 +1,10 @@
+type: object
+properties:
+  MemoryStats:
+    $ref: './MemoryStats.yaml'
+  CpuStats:
+    $ref: './CpuStats.yaml'
+  DeviceStats:
+    type: array
+    items:
+      $ref: './DeviceGroupStats.yaml'

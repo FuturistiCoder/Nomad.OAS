@@ -1,0 +1,10 @@
+type: object
+properties:
+  NodeModifyIndex:
+    $ref: './BigInteger.yaml'
+  EvalIDs:
+    type: array
+    items:
+      type: string
+  EvalCreateIndex:
+    $ref: './BigInteger.yaml'

@@ -1,0 +1,26 @@
+type: object
+properties:
+  Stagger:
+    type: integer
+    format: int64
+  MaxParallel:
+    type: integer
+    format: int32
+  HealthCheck:
+    type: string
+  MinHealthyTime:
+    type: integer
+    format: int64
+  HealthyDeadline:
+    type: integer
+    format: int64
+  ProgressDeadline:
+    type: integer
+    format: int64
+  Canary:
+    type: integer
+    format: int32
+  AutoRevert:
+    type: boolean
+  AutoPromote:
+    type: boolean

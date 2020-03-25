@@ -1,0 +1,8 @@
+type: object
+properties:
+  LTarget:
+    type: string
+  RTarget:
+    type: string
+  Operand:
+    type: string

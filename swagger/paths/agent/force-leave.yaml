@@ -1,0 +1,10 @@
+post:
+  summary: Forces a member of the gossip pool from the "failed" state into the "left" state.
+  operationId: forceLeave
+  tags:
+    - agent
+  parameters:
+    - $ref: '../../parameters/query/node.yaml'
+  responses:
+    '200':
+      description: successful

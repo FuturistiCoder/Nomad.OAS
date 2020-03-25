@@ -1,0 +1,10 @@
+type: object
+properties:
+  Cpu:
+    $ref: './AllocatedCpuResources.yaml'
+  Memory:
+    $ref: './AllocatedMemoryResources.yaml'
+  Networks:
+    type: array
+    items:
+      $ref: './NetworkResource.yaml'

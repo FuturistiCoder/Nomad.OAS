@@ -1,0 +1,31 @@
+type: object
+properties:
+  PlacedCanaries:
+    type: array
+    items:
+      type: string
+  AutoRevert:
+    type: boolean
+  ProgressDeadline:
+    type: integer
+    format: int64
+  RequireProgressBy:
+    type: string
+    format: date-time
+  Promoted:
+    type: boolean
+  DesiredCanaries:
+    type: integer
+    format: int32
+  DesiredTotal:
+    type: integer
+    format: int32
+  PlacedAllocs:
+    type: integer
+    format: int32
+  HealthyAllocs:
+    type: integer
+    format: int32
+  UnhealthyAllocs:
+    type: integer
+    format: int32

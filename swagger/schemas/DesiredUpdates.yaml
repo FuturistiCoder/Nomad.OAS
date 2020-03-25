@@ -1,0 +1,18 @@
+type: object
+properties:
+  Ignore:
+    $ref: './BigInteger.yaml'
+  Place:
+    $ref: './BigInteger.yaml'
+  Migrate:
+    $ref: './BigInteger.yaml'
+  Stop:
+    $ref: './BigInteger.yaml'
+  InPlaceUpdate:
+    $ref: './BigInteger.yaml'
+  DestructiveUpdate:
+    $ref: './BigInteger.yaml'
+  Canary:
+    $ref: './BigInteger.yaml'
+  Preemptions:
+    $ref: './BigInteger.yaml'

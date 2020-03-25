@@ -1,0 +1,10 @@
+type: object
+properties:
+  Label:
+    type: string
+  Value:
+    type: integer
+    format: int32
+  To:
+    type: integer
+    format: int32

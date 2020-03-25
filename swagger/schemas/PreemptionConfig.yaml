@@ -1,0 +1,8 @@
+type: object
+properties:
+  SystemSchedulerEnabled:
+    type: boolean
+  BatchSchedulerEnabled:
+    type: boolean
+  ServiceSchedulerEnabled:
+    type: boolean

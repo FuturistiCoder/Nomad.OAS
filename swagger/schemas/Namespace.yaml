@@ -1,0 +1,12 @@
+type: object
+properties:
+  Name:
+    type: string
+  Description:
+    type: string
+  Quota:
+    type: string
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

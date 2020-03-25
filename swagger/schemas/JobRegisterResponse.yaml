@@ -1,0 +1,10 @@
+type: object
+properties:
+  EvalId:
+    type: string
+  EvalCreateIndex:
+    $ref: './BigInteger.yaml'
+  JobModifyIndex:
+    $ref: './BigInteger.yaml'
+  Warnings:
+    type: string

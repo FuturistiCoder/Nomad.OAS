@@ -1,0 +1,9 @@
+type: object
+properties:
+  RescheduleTime:
+    type: integer
+    format: int64
+  PrevAllocId:
+    type: string
+  PrevNodeId:
+    type: string
