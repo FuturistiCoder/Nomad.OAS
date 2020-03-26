@@ -1,0 +1,33 @@
+get:
+  summary: lists all known jobs in the system registered with Nomad
+  operationId: getJobs
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/query/prefix.yaml'
+  responses:
+    '200':
+      description: job list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/JobListStub.yaml'
+post:
+  summary: creates (aka "registers") a new job in the system
+  operationId: registerJob
+  tags:
+    - jobs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/RegisterJobRequest.yaml'
+  responses:
+    '200':
+      description: job register response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobRegisterResponse.yaml'

@@ -1,0 +1,17 @@
+post:
+  summary: parse a HCL jobspec and produce the equivalent JSON encoded job
+  operationId: parseJobHCL
+  tags:
+    - jobs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/JobsParseRequest.yaml'
+  responses:
+    '200':
+      description: job
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/Job.yaml'

@@ -1,0 +1,19 @@
+post:
+  summary: sets the job's stability
+  operationId: setJobStability
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/JobStabilityRequest.yaml'
+  responses:
+    '200':
+      description: job stability response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobStabilityResponse.yaml'

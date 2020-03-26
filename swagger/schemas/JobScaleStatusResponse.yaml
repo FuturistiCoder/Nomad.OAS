@@ -1,0 +1,14 @@
+type: object
+properties:
+  JobID:
+    type: string
+  JobCreateIndex:
+    $ref: './BigInteger.yaml'
+  JobModifyIndex:
+    $ref: './BigInteger.yaml'
+  JobStopped:
+    type: boolean
+  TaskGroups:
+    type: object
+    additionalProperties:
+      $ref: './TaskGroupScaleStatus.yaml'

@@ -1,0 +1,32 @@
+type: object
+properties:
+  Id:
+    type: string
+  Provider:
+    type: string
+  Version:
+    type: string
+  ControllerRequired:
+    type: boolean
+  Controllers:
+    type: object
+    additionalProperties:
+      $ref: './CsiInfo.yaml'
+  Nodes:
+    type: object
+    additionalProperties:
+      $ref: './CsiInfo.yaml'
+  Allocations:
+    type: array
+    items:
+      $ref: './AllocationListStub.yaml'
+  ControllersHealthy:
+    type: integer
+    format: int32
+  NodesHealthy:
+    type: integer
+    format: int32
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

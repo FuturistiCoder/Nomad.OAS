@@ -1,0 +1,12 @@
+type: object
+properties:
+  DeploymentId:
+    type: string
+  HealthyAllocationIDs:
+    type: array
+    items:
+      type: string
+  UnhealthyAllocationIDs:
+    type: array
+    items:
+      type: string

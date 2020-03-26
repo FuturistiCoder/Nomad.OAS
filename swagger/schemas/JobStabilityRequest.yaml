@@ -1,0 +1,10 @@
+type: object
+properties:
+  JobID:
+    type: string
+  JobVersion:
+    $ref: './BigInteger.yaml'
+  Stable:
+    type: boolean
+required:
+  - JobID

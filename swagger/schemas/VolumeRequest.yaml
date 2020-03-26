@@ -8,3 +8,9 @@ properties:
     type: string
   ReadOnly:
     type: boolean
+  MountOptions:
+    $ref: './CsiMountOptions.yaml'
+  -:
+    type: array
+    items:
+      type: string

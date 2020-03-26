@@ -1,0 +1,6 @@
+name: job_id
+in: path
+description: job id
+required: true
+schema:
+  type: string

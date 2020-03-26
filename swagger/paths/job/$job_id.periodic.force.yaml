@@ -1,0 +1,14 @@
+post:
+  summary: forces a new instance of the periodic job. A new instance will be created even if it violates the job's prohibit_overlap settings. As such, this should be only used to immediately run a periodic job
+  operationId: forceNewPeriodicInstance
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  responses:
+    '200':
+      description: periodic force response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/PeriodicForceResponse.yaml'

@@ -1,0 +1,12 @@
+type: object
+properties:
+  FsType:
+    type: string
+  MountFlags:
+    type: array
+    items:
+      type: string
+  -:
+    type: array
+    items:
+      type: string

@@ -1,0 +1,17 @@
+get:
+  summary: lists a single job's deployments
+  operationId: getJobDeployments
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+    - $ref: '../../parameters/query/all.yaml'
+  responses:
+    '200':
+      description: job deployments response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/Deployment.yaml'

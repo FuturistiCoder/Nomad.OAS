@@ -1,0 +1,26 @@
+type: object
+properties:
+  Id:
+    type: string
+  Namespace:
+    type: string
+  Target:
+    type: object
+    additionalProperties:
+      type: string
+  Min:
+    type: integer
+    format: int64
+  Max:
+    type: integer
+    format: int64
+  Policy:
+    type: object
+    additionalProperties:
+      type: object
+  Enabled:
+    type: boolean
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

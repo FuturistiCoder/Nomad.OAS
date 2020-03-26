@@ -1,0 +1,8 @@
+type: object
+properties:
+  Prefix:
+    type: string
+  Context:
+    type: string
+  QueryOptions:
+    $ref: './QueryOptions.yaml'

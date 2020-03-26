@@ -57,6 +57,14 @@ properties:
     type: object
     additionalProperties:
       $ref: './HostVolumeInfo.yaml'
+  CsiControllerPlugins:
+    type: object
+    additionalProperties:
+      $ref: './CsiInfo.yaml'
+  CsiNodePlugins:
+    type: object
+    additionalProperties:
+      $ref: './CsiInfo.yaml'
   CreateIndex:
     $ref: './BigInteger.yaml'
   ModifyIndex:

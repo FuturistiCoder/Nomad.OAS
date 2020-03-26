@@ -11,7 +11,7 @@ properties:
     type: string
   Namespace:
     type: string
-  JobId:
+  JobID:
     type: string
   JobModifyIndex:
     $ref: './BigInteger.yaml'

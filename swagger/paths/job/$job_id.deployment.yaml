@@ -1,0 +1,14 @@
+get:
+  summary: get a single job's most recent deployment
+  operationId: getJobLatestDeployment
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  responses:
+    '200':
+      description: job deployment response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/Deployment.yaml'

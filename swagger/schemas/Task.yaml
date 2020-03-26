@@ -6,6 +6,8 @@ properties:
     type: string
   User:
     type: string
+  Lifecycle:
+    $ref: './TaskLifecycle.yaml'
   Config:
     type: object
     additionalProperties:
@@ -53,6 +55,8 @@ properties:
     type: array
     items:
       $ref: './VolumeMount.yaml'
+  Csi_plugin:
+    $ref: './TaskCsiPluginConfig.yaml'
   Leader:
     type: boolean
   ShutdownDelay:

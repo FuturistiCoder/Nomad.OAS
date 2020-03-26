@@ -1,0 +1,21 @@
+type: object
+properties:
+  Desired:
+    type: integer
+    format: int32
+  Placed:
+    type: integer
+    format: int32
+  Running:
+    type: integer
+    format: int32
+  Healthy:
+    type: integer
+    format: int32
+  Unhealthy:
+    type: integer
+    format: int32
+  Events:
+    type: array
+    items:
+      $ref: './ScalingEvent.yaml'

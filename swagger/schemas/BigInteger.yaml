@@ -1,2 +1,2 @@
 type: integer
-format: big-int
+format: uint64

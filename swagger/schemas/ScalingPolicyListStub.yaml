@@ -1,0 +1,14 @@
+type: object
+properties:
+  Id:
+    type: string
+  Enabled:
+    type: boolean
+  Target:
+    type: object
+    additionalProperties:
+      type: string
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

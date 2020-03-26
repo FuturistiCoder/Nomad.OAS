@@ -7,4 +7,8 @@ post:
     - $ref: '../../parameters/query/addresses.yaml'
   responses:
     '200':
-      $ref: '../../responses/JoinResponse.yaml'
+      description: join response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JoinResponse.yaml'

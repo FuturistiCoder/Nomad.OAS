@@ -1,0 +1,14 @@
+get:
+  summary: reads information about all versions of a job
+  operationId: getJobVersions
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  responses:
+    '200':
+      description: job versions response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobVersionsResponse.yaml'

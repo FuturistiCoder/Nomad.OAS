@@ -1,4 +1,4 @@
 type: object
 properties:
-  EvalId:
+  EvalID:
     type: string

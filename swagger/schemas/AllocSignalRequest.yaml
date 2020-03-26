@@ -1,0 +1,6 @@
+type: object
+properties:
+  Task:
+    type: string
+  Signal:
+    type: string

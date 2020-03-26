@@ -1,0 +1,10 @@
+type: object
+properties:
+  SupportsReadOnlyAttach:
+    type: boolean
+  SupportsAttachDetach:
+    type: boolean
+  SupportsListVolumes:
+    type: boolean
+  SupportsListVolumesAttachedNodes:
+    type: boolean

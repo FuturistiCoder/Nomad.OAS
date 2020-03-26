@@ -50,3 +50,5 @@ properties:
   ShutdownDelay:
     type: integer
     format: int64
+  Scaling:
+    $ref: './ScalingPolicy.yaml'

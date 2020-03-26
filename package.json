@@ -5,7 +5,7 @@
   "author": "FuturistiCoder",
   "license": "MIT",
   "scripts": {
-    "validate": "swagger-cli validate swagger.yaml",
+    "validate": "swagger-cli validate swagger/swagger.yaml",
     "clean": "rm -r dist/*",
     "bundle": "swagger-cli bundle swagger/swagger.yaml -o dist/swagger.json",
     "generate-csharp": "autorest-beta --v3 --input-file=dist/swagger.json --csharp --fluent --add-credentials --use-datetimeoffset --output-folder=client/csharp/Nomad.Net/generated --namespace=HashiCorp.Nomad"

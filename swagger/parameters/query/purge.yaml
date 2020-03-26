@@ -1,0 +1,6 @@
+name: purge
+in: query
+description: Specifies that the job should stopped and purged immediately. This means the job will not be queryable after being stopped. If not set, the job will be purged by the garbage collector
+required: false
+schema:
+  type: boolean

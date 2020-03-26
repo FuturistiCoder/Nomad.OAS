@@ -1,0 +1,33 @@
+get:
+  summary: reads scale information about a job
+  operationId: getJobScaleStatus
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  responses:
+    '200':
+      description: job scale status response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobScaleStatusResponse.yaml'
+post:
+  summary: performs a scaling action against a job. Currently, this endpoint supports scaling the count for a task group
+  operationId: scaleTaskGroup
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/ScalingRequest.yaml'
+  responses:
+    '200':
+      description: job register response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobRegisterResponse.yaml'

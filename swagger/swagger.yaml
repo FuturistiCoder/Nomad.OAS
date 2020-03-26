@@ -22,7 +22,41 @@ paths:
   /agent/monitor:
     $ref: './paths/agent/monitor.yaml'
   # todo: Agent Runtime Profiles agent/pprof/*
-  #
+
+  # job
+  /job/{job_id}:
+    $ref: './paths/job/$job_id.yaml'
+  /job/{job_id}/allocations:
+    $ref: './paths/job/$job_id.allocations.yaml'
+  /job/{job_id}/deployment:
+    $ref: './paths/job/$job_id.deployment.yaml'
+  /job/{job_id}/deployments:
+    $ref: './paths/job/$job_id.deployments.yaml'
+  /job/{job_id}/dispatch:
+    $ref: './paths/job/$job_id.dispatch.yaml'
+  /job/{job_id}/evaluate:
+    $ref: './paths/job/$job_id.evaluate.yaml'
+  /job/{job_id}/evaluations:
+    $ref: './paths/job/$job_id.evaluations.yaml'
+  /job/{job_id}/periodic/force:
+    $ref: './paths/job/$job_id.periodic.force.yaml'
+  /job/{job_id}/plan:
+    $ref: './paths/job/$job_id.plan.yaml'
+  /job/{job_id}/revert:
+    $ref: './paths/job/$job_id.revert.yaml'
+  /job/{job_id}/scale:
+    $ref: './paths/job/$job_id.scale.yaml'
+  /job/{job_id}/stable:
+    $ref: './paths/job/$job_id.stable.yaml'
+  /job/{job_id}/summary:
+    $ref: './paths/job/$job_id.summary.yaml'
+  /job/{job_id}/versions:
+    $ref: './paths/job/$job_id.versions.yaml'
+  # jobs
+  /jobs:
+    $ref: './paths/jobs/_.yaml'
+  /jobs/parse:
+    $ref: './paths/jobs/parse.yaml'
 components:
   parameters:
     $ref: './parameters/_index.yaml'

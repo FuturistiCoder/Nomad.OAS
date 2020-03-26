@@ -1,0 +1,6 @@
+name: all
+in: query
+required: false
+description: Specifies whether should include * from a previously registered job with the same ID. This is possible if the job is deregistered and reregistered.
+schema:
+  type: boolean

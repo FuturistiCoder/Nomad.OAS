@@ -1,0 +1,10 @@
+type: object
+properties:
+  Job:
+    $ref: './Job.yaml'
+  Diff:
+    type: boolean
+  PolicyOverride:
+    type: boolean
+required:
+  - Job

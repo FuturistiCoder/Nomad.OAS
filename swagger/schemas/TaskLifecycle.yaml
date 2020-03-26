@@ -1,0 +1,6 @@
+type: object
+properties:
+  Hook:
+    type: string
+  Sidecar:
+    type: boolean

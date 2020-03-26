@@ -1,0 +1,10 @@
+type: object
+properties:
+  Versions:
+    type: array
+    items:
+      $ref: './Job.yaml'
+  Diffs:
+    type: array
+    items:
+      $ref: './JobDiff.yaml'

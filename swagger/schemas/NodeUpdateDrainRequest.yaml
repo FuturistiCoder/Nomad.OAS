@@ -1,0 +1,8 @@
+type: object
+properties:
+  NodeId:
+    type: string
+  DrainSpec:
+    $ref: './DrainSpec.yaml'
+  MarkEligible:
+    type: boolean

@@ -1,0 +1,6 @@
+type: object
+properties:
+  Segments:
+    type: object
+    additionalProperties:
+      type: string

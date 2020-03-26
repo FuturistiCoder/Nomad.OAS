@@ -1,0 +1,11 @@
+type: object
+properties:
+  Id:
+    type: string
+  MaxVolumes:
+    type: integer
+    format: int64
+  AccessibleTopology:
+    $ref: './CsiTopology.yaml'
+  RequiresNodeStageVolume:
+    type: boolean

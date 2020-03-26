@@ -1,0 +1,17 @@
+get:
+  summary: reads information about a single job's allocations
+  operationId: getJobAllocations
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+    - $ref: '../../parameters/query/all.yaml'
+  responses:
+    '200':
+      description: job allocations response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/AllocationListStub.yaml'

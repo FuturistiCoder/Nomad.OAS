@@ -1,0 +1,19 @@
+post:
+  summary: reverts the job to an older version
+  operationId: revertJob
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/JobRevertRequest.yaml'
+  responses:
+    '200':
+      description: job register response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobRegisterResponse.yaml'

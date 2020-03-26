@@ -1,0 +1,48 @@
+get:
+  summary: reads information about a single job for its specification and status
+  operationId: getJob
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  responses:
+    '200':
+      description: job
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/Job.yaml'
+post:
+  summary: registers a new job or updates an existing job
+  operationId: updateJob
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/RegisterJobRequest.yaml'
+  responses:
+    '200':
+      description: job register response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobRegisterResponse.yaml'
+delete:
+  summary: deregisters a job, and stops all allocations part of it
+  operationId: stopJob
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+    - $ref: '../../parameters/query/purge.yaml'
+  responses:
+    '200':
+      description: job deregister response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobDeregisterResponse.yaml'

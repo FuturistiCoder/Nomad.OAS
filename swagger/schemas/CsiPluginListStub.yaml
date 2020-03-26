@@ -1,0 +1,24 @@
+type: object
+properties:
+  Id:
+    type: string
+  Provider:
+    type: string
+  ControllerRequired:
+    type: boolean
+  ControllersHealthy:
+    type: integer
+    format: int32
+  ControllersExpected:
+    type: integer
+    format: int32
+  NodesHealthy:
+    type: integer
+    format: int32
+  NodesExpected:
+    type: integer
+    format: int32
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'

@@ -1,0 +1,9 @@
+type: object
+properties:
+  Payload:
+    type: string
+    format: byte
+  Meta:
+    type: object
+    additionalProperties:
+      type: string

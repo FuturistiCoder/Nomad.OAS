@@ -1,0 +1,6 @@
+type: object
+properties:
+  DeploymentId:
+    type: string
+  Pause:
+    type: boolean

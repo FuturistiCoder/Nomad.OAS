@@ -1,0 +1,8 @@
+type: object
+properties:
+  Id:
+    type: string
+  Type:
+    type: string
+  MountDir:
+    type: string

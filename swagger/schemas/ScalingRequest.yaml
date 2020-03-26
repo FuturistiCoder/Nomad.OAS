@@ -1,0 +1,21 @@
+type: object
+properties:
+  Count:
+    type: integer
+    format: int64
+  Target:
+    type: object
+    additionalProperties:
+      type: string
+  Reason:
+    type: string
+  Error:
+    type: string
+  Meta:
+    type: object
+    additionalProperties:
+      type: object
+  PolicyOverride:
+    type: boolean
+required:
+  - Target

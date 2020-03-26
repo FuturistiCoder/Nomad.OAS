@@ -2,7 +2,7 @@ type: object
 properties:
   Id:
     type: string
-  EvalId:
+  EvalID:
     type: string
   Name:
     type: string
@@ -12,7 +12,7 @@ properties:
     type: string
   NodeName:
     type: string
-  JobId:
+  JobID:
     type: string
   JobType:
     type: string

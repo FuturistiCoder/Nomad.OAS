@@ -1,0 +1,65 @@
+type: object
+properties:
+  Id:
+    type: string
+  Name:
+    type: string
+  ExternalId:
+    type: string
+  Namespace:
+    type: string
+  Topologies:
+    type: array
+    items:
+      $ref: './CsiTopology.yaml'
+  AccessMode:
+    type: string
+  AttachmentMode:
+    type: string
+  MountOptions:
+    $ref: './CsiMountOptions.yaml'
+  ReadAllocs:
+    type: object
+    additionalProperties:
+      $ref: './Allocation.yaml'
+  WriteAllocs:
+    type: object
+    additionalProperties:
+      $ref: './Allocation.yaml'
+  Allocations:
+    type: array
+    items:
+      $ref: './AllocationListStub.yaml'
+  Schedulable:
+    type: boolean
+  PluginId:
+    type: string
+  Provider:
+    type: string
+  ProviderVersion:
+    type: string
+  ControllerRequired:
+    type: boolean
+  ControllersHealthy:
+    type: integer
+    format: int32
+  ControllersExpected:
+    type: integer
+    format: int32
+  NodesHealthy:
+    type: integer
+    format: int32
+  NodesExpected:
+    type: integer
+    format: int32
+  ResourceExhausted:
+    type: string
+    format: date-time
+  CreateIndex:
+    $ref: './BigInteger.yaml'
+  ModifyIndex:
+    $ref: './BigInteger.yaml'
+  -:
+    type: array
+    items:
+      type: string

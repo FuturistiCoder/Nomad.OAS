@@ -1,0 +1,19 @@
+post:
+  summary: invokes a dry-run of the scheduler for the job
+  operationId: planJob
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/JobPlanRequest.yaml'
+  responses:
+    '200':
+      description: job plan response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobPlanResponse.yaml'

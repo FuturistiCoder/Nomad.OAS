@@ -1,0 +1,12 @@
+type: object
+properties:
+  Job:
+    $ref: './Job.yaml'
+  EnforceIndex:
+    type: boolean
+  JobModifyIndex:
+    $ref: './BigInteger.yaml'
+  PolicyOverride:
+    type: boolean
+required:
+  - Job

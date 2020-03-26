@@ -1,0 +1,21 @@
+type: object
+properties:
+  Region:
+    type: string
+  Namespace:
+    type: string
+  AllowStale:
+    type: boolean
+  WaitIndex:
+    $ref: './BigInteger.yaml'
+  WaitTime:
+    type: integer
+    format: int64
+  Prefix:
+    type: string
+  Params:
+    type: object
+    additionalProperties:
+      type: string
+  AuthToken:
+    type: string

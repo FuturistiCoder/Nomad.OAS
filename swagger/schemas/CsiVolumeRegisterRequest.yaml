@@ -1,0 +1,6 @@
+type: object
+properties:
+  Volumes:
+    type: array
+    items:
+      $ref: './CsiVolume.yaml'

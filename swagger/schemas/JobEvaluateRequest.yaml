@@ -1,0 +1,8 @@
+type: object
+properties:
+  JobID:
+    type: string
+  EvalOptions:
+    $ref: './EvalOptions.yaml'
+required:
+  - JobID

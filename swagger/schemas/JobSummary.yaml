@@ -1,6 +1,6 @@
 type: object
 properties:
-  JobId:
+  JobID:
     type: string
   Namespace:
     type: string

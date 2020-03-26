@@ -1,0 +1,16 @@
+get:
+  summary: reads information about a single job's evaluations
+  operationId: getJobEvaluations
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  responses:
+    '200':
+      description: job evaluations response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/Evaluation.yaml'

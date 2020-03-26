@@ -1,0 +1,6 @@
+type: object
+properties:
+  NodeId:
+    type: string
+  Eligibility:
+    type: string

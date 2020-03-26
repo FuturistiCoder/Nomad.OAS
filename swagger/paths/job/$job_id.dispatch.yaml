@@ -1,0 +1,19 @@
+post:
+  summary: dispatches a new instance of a parameterized job
+  operationId: dispatchJob
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/JobDispatchRequest.yaml'
+  responses:
+    '200':
+      description: job dispatch response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobDispatchResponse.yaml'

@@ -2,7 +2,7 @@ type: object
 properties:
   DispatchedJobId:
     type: string
-  EvalId:
+  EvalID:
     type: string
   EvalCreateIndex:
     $ref: './BigInteger.yaml'

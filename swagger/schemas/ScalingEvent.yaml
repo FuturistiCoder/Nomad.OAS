@@ -1,0 +1,14 @@
+type: object
+properties:
+  Reason:
+    type: string
+  Error:
+    type: string
+  Meta:
+    type: object
+    additionalProperties:
+      type: object
+  Time:
+    $ref: './BigInteger.yaml'
+  EvalID:
+    type: string

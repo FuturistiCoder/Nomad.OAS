@@ -1,0 +1,19 @@
+post:
+  summary: creates a new evaluation for the given job. This can be used to force run the scheduling logic if necessary
+  operationId: evaluateJob
+  tags:
+    - jobs
+  parameters:
+    - $ref: '../../parameters/path/job_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/JobEvaluateRequest.yaml'
+  responses:
+    '200':
+      description: job register response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobRegisterResponse.yaml'

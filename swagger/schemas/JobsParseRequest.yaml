@@ -1,0 +1,8 @@
+type: object
+properties:
+  JobHcl:
+    type: string
+  Canonicalize:
+    type: boolean
+required:
+  - JobHcl
