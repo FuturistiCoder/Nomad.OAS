@@ -22,6 +22,67 @@ paths:
   /agent/monitor:
     $ref: './paths/agent/monitor.yaml'
   # todo: Agent Runtime Profiles agent/pprof/*
+  
+  # allocation
+  /allocation/{alloc_id}:
+    $ref: './paths/allocation/$alloc_id.yaml'
+  /allocation/{alloc_id}/restart:
+    $ref: './paths/allocation/$alloc_id.restart.yaml'
+  /allocation/{alloc_id}/signal:
+    $ref: './paths/allocation/$alloc_id.signal.yaml'
+  /allocation/{alloc_id}/stop:
+    $ref: './paths/allocation/$alloc_id.stop.yaml'
+  # allocations
+  /allocations:
+    $ref: './paths/allocations/_.yaml'
+  
+  # client
+  /client/allocation/{alloc_id}/gc:
+    $ref: './paths/client/allocation.$alloc_id.gc.yaml'
+  /client/allocation/{alloc_id}/stats:
+    $ref: './paths/client/allocation.$alloc_id.stats.yaml'
+  /client/fs/cat/{alloc_id}:
+    $ref: './paths/client/fs.cat.$alloc_id.yaml'
+  /client/fs/logs/{alloc_id}:
+    $ref: './paths/client/fs.logs.$alloc_id.yaml'
+  /client/fs/ls/{alloc_id}:
+    $ref: './paths/client/fs.ls.$alloc_id.yaml'
+  /client/fs/readat/{alloc_id}:
+    $ref: './paths/client/fs.readat.$alloc_id.yaml'
+  /client/fs/stat/{alloc_id}:
+    $ref: './paths/client/fs.stat.$alloc_id.yaml'
+  /client/fs/stream/{alloc_id}:
+    $ref: './paths/client/fs.stream.$alloc_id.yaml'
+  /client/gc:
+    $ref: './paths/client/gc.yaml'
+  /client/stats:
+    $ref: './paths/client/stats.yaml'
+  
+  # deployment
+  /deployment/{deployment_id}:
+    $ref: './paths/deployment/$deployment_id.yaml'
+  /deployment/allocation-health/{deployment_id}:
+    $ref: './paths/deployment/allocation-health.$deployment_id.yaml'
+  /deployment/allocations/{deployment_id}:
+    $ref: './paths/deployment/allocations.$deployment_id.yaml'
+  /deployment/fail/{deployment_id}:
+    $ref: './paths/deployment/fail.$deployment_id.yaml'
+  /deployment/pause/{deployment_id}:
+    $ref: './paths/deployment/pause.$deployment_id.yaml'
+  /deployment/promote/{deployment_id}:
+    $ref: './paths/deployment/promote.$deployment_id.yaml'
+  # deployments
+  /deployments:
+    $ref: './paths/deployments/_.yaml'
+
+  # evaluation
+  /evaluation/{eval_id}:
+    $ref: './paths/evaluation/$eval_id.yaml'
+  /evaluation/{eval_id}/allocations:
+    $ref: './paths/evaluation/$eval_id.allocations.yaml'
+  # evaluations
+  /evaluations:
+    $ref: './paths/evaluations/_.yaml'
 
   # job
   /job/{job_id}:
@@ -57,6 +118,66 @@ paths:
     $ref: './paths/jobs/_.yaml'
   /jobs/parse:
     $ref: './paths/jobs/parse.yaml'
+  
+  # node
+  # todo: node/{node_id}/purge ? not found in nomad api
+  /node/{node_id}/allocations:
+    $ref: './paths/node/$node_id.allocations.yaml'
+  /node/{node_id}/drain:
+    $ref: './paths/node/$node_id.drain.yaml'
+  /node/{node_id}/eligibility:
+    $ref: './paths/node/$node_id.eligibility.yaml'
+  /node/{node_id}/evaluate:
+    $ref: './paths/node/$node_id.evaluate.yaml'
+  /node/{node_id}:
+    $ref: './paths/node/$node_id.yaml'
+  # nodes
+  /nodes:
+    $ref: './paths/nodes/_.yaml'
+  
+  # todo: metrics
+  # todo: operater
+  # todo: plugins
+  # todo: namespaces (enterprise)
+  # todo: quotas (enterprise)
+  # todo: plugins
+
+  # regions
+  /regions:
+    $ref: './paths/regions/_.yaml'
+  
+  
+  # todo: scaling policies (v0.11)
+
+  # search
+  /search:
+    $ref: './paths/search/_.yaml'
+
+  # todo: sentinel (enterprise)
+
+  # status
+  /status/leader:
+    $ref: './paths/status/leader.yaml'
+  /status/peers:
+    $ref: './paths/status/peers.yaml'
+  
+  # system
+  /system/gc:
+    $ref: './paths/system/gc.yaml'
+  /system/reconcile/summaries:
+    $ref: './paths/system/reconcile.summaries.yaml'
+
+  # validate
+  /validate/job:
+    $ref: './paths/validate/job.yaml'
+  
+  # volume
+  /volume/csi/{volume_id}:
+    $ref: './paths/volume/csi.$volume_id.yaml'
+  # volumes
+  /volumes:
+    $ref: './paths/volumes/_.yaml'
+  
 components:
   parameters:
     $ref: './parameters/_index.yaml'

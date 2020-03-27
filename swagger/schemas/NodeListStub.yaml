@@ -2,7 +2,7 @@ type: object
 properties:
   Address:
     type: string
-  Id:
+  ID:
     type: string
   Datacenter:
     type: string

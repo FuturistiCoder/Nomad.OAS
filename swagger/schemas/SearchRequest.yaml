@@ -4,5 +4,6 @@ properties:
     type: string
   Context:
     type: string
-  QueryOptions:
-    $ref: './QueryOptions.yaml'
+required:
+  - Prefix
+  - Context

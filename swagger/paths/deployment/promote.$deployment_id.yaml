@@ -1,0 +1,20 @@
+post:
+  summary: promote task groups that have canaries for a deployment. This should be done when the placed canaries are healthy and the rolling upgrade of the remaining allocations should begin
+  operationId: promoteDeployment
+  tags:
+    - deployments
+  parameters:
+    - $ref: '../../parameters/path/deployment_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/DeploymentPromoteRequest.yaml'
+    
+  responses:
+    '200':
+      description: deployment update response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/DeploymentUpdateResponse.yaml'

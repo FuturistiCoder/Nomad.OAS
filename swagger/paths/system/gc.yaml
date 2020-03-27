@@ -1,0 +1,9 @@
+put:
+  summary: initializes a garbage collection of jobs, evaluations, allocations, and nodes. This is an asynchronous operation
+  operationId: forceGC
+  tags:
+    - system
+
+  responses:
+    '200':
+      $ref: '../../responses/NullResponse.yaml'

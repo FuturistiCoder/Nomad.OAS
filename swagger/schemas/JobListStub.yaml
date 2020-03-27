@@ -1,8 +1,8 @@
 type: object
 properties:
-  Id:
+  ID:
     type: string
-  ParentId:
+  ParentID:
     type: string
   Name:
     type: string

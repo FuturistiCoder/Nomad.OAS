@@ -1,0 +1,6 @@
+name: path
+in: query
+description: Specifies the path of the file to read, relative to the root of the allocation directory
+required: false
+schema:
+  type: string

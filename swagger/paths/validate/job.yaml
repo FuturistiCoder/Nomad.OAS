@@ -1,0 +1,17 @@
+post:
+  summary: validate object structs, fields, and types
+  operationId: validateJob
+  tags:
+    - jobs
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/Job.yaml'
+  responses:
+    '200':
+      description: job validate response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/JobValidateResponse.yaml'

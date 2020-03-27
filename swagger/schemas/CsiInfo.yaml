@@ -1,6 +1,6 @@
 type: object
 properties:
-  PluginId:
+  PluginID:
     type: string
   Healthy:
     type: boolean

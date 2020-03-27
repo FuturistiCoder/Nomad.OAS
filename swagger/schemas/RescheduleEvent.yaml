@@ -3,7 +3,7 @@ properties:
   RescheduleTime:
     type: integer
     format: int64
-  PrevAllocId:
+  PrevAllocID:
     type: string
-  PrevNodeId:
+  PrevNodeID:
     type: string

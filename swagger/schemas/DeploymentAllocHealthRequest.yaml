@@ -1,6 +1,6 @@
 type: object
 properties:
-  DeploymentId:
+  DeploymentID:
     type: string
   HealthyAllocationIDs:
     type: array

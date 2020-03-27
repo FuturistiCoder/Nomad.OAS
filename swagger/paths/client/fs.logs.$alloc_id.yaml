@@ -1,0 +1,21 @@
+get:
+  summary: streams a task's stderr/stdout logs
+  operationId: streamClientLogs
+  tags:
+    - client
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+    - $ref: '../../parameters/query/task.yaml'
+    - $ref: '../../parameters/query/follow.yaml'
+    - $ref: '../../parameters/query/io_type.yaml'
+    - $ref: '../../parameters/query/offset.yaml'
+    - $ref: '../../parameters/query/origin.yaml'
+    - $ref: '../../parameters/query/plain_format.yaml'
+  responses:
+    '200':
+      description: file response
+      content:
+        text/plain:
+          schema:
+            type: string
+    # todo FramedStream

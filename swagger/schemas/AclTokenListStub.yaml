@@ -1,6 +1,6 @@
 type: object
 properties:
-  AccessorId:
+  AccessorID:
     type: string
   Name:
     type: string

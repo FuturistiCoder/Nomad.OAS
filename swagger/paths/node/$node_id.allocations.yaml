@@ -1,0 +1,17 @@
+get:
+  summary: lists all of the allocations for the given node
+  description: This can be used to determine what allocations have been scheduled on the node, their current status, and the values of dynamically assigned resources, like ports
+  operationId: getAllocationsForNode
+  tags:
+    - nodes
+  parameters:
+    - $ref: '../../parameters/path/node_id.yaml'
+  responses:
+    '200':
+      description: allocation list response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/AllocationListStub.yaml'

@@ -1,0 +1,19 @@
+get:
+  summary: streams the contents of a file in an allocation directory
+  operationId: streamClientFile
+  tags:
+    - client
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+    - $ref: '../../parameters/query/path.yaml'
+    - $ref: '../../parameters/query/follow.yaml'
+    - $ref: '../../parameters/query/offset.yaml'
+    - $ref: '../../parameters/query/origin.yaml'
+  responses:
+    '200':
+      description: file response
+      content:
+        text/plain:
+          schema:
+            type: string
+# todo: create FramedStream for this endpoint

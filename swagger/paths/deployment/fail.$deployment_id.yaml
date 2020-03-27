@@ -1,0 +1,14 @@
+post:
+  summary: mark a deployment as failed. This should be done to force the scheduler to stop creating allocations as part of the deployment or to cause a rollback to a previous job version. This endpoint only triggers a rollback if the most recent stable version of the job has a different specification than the job being reverted
+  operationId: failDeployment
+  tags:
+    - deployments
+  parameters:
+    - $ref: '../../parameters/path/deployment_id.yaml'
+  responses:
+    '200':
+      description: deployment update response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/DeploymentUpdateResponse.yaml'

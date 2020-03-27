@@ -1,0 +1,44 @@
+get:
+  summary: reads information about a specific volume
+  operationId: getVolume
+  tags:
+    - volumes
+  parameters:
+    - $ref: '../../parameters/path/volume_id.yaml'
+
+  responses:
+    '200':
+      description: volume 
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/CsiVolume.yaml'
+
+put:
+  summary: registers an external volume with Nomad. It is an error to register an existing volume
+  operationId: registerVolume
+  tags:
+    - volumes
+  parameters:
+    - $ref: '../../parameters/path/volume_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/CsiVolumeRegisterRequest.yaml'
+
+  responses:
+    '200':
+      $ref: '../../responses/NullResponse.yaml'
+
+delete:
+  summary: deregisters an external volume with Nomad. It is an error to deregister a volume that is in use
+  operationId: deregisterVolume
+  tags:
+    - volumes
+  parameters:
+    - $ref: '../../parameters/path/volume_id.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/NullResponse.yaml'
+

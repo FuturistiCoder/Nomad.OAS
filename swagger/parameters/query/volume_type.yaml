@@ -1,0 +1,6 @@
+name: type
+in: query
+description: Specifies the type of volume to query. Currently only supports csi. This is specified as a query string parameter. Returns an empty list if omitted
+required: false
+schema:
+  type: string

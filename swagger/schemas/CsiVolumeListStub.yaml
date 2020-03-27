@@ -1,12 +1,12 @@
 type: object
 properties:
-  Id:
+  ID:
     type: string
   Namespace:
     type: string
   Name:
     type: string
-  ExternalId:
+  ExternalID:
     type: string
   Topologies:
     type: array
@@ -20,7 +20,7 @@ properties:
     $ref: './CsiMountOptions.yaml'
   Schedulable:
     type: boolean
-  PluginId:
+  PluginID:
     type: string
   Provider:
     type: string

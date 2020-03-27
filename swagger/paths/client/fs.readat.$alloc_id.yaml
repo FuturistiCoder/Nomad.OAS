@@ -1,0 +1,17 @@
+get:
+  summary: reads the contents of a file in an allocation directory at a particular offset and limit
+  operationId: getClientFileAtOffest
+  tags:
+    - client
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+    - $ref: '../../parameters/query/path.yaml'
+    - $ref: '../../parameters/query/offset.yaml'
+    - $ref: '../../parameters/query/limit.yaml'
+  responses:
+    '200':
+      description: file response
+      content:
+        text/plain:
+          schema:
+            type: string

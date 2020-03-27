@@ -1,0 +1,7 @@
+name: offset
+in: query
+description: Specifies the byte offset from where content will be read
+required: true
+schema:
+  type: integer
+  format: int64

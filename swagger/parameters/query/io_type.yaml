@@ -1,0 +1,7 @@
+name: type
+in: query
+description: Specifies the stream to stream
+required: false
+schema:
+  type: string
+  enum: [stderr, stdout]

@@ -1,0 +1,16 @@
+get:
+  summary: query for and interact with allocations
+  operationId: getAllocations
+  tags:
+    - allocations
+  parameters:
+    - $ref: '../../parameters/query/prefix.yaml'
+  responses:
+    '200':
+      description: allocation list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/AllocationListStub.yaml'

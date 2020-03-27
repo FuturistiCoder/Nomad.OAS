@@ -1,0 +1,15 @@
+post:
+  summary: restarts an allocation or task in-place
+  operationId: restartAllocation
+  tags:
+    - allocations
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/AllocationRestartRequest.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/NullResponse.yaml'

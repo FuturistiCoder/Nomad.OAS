@@ -1,6 +1,9 @@
 type: object
 properties:
-  NodeId:
+  NodeID:
     type: string
   Eligibility:
     type: string
+    enum: [eligible, ineligible]
+required:
+  - Eligibility

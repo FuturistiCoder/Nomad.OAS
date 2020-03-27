@@ -1,4 +1,4 @@
 type: object
 properties:
-  DeploymentId:
+  DeploymentID:
     type: string

@@ -1,0 +1,16 @@
+get:
+  summary: lists all evaluations
+  operationId: getEvaluations
+  tags:
+    - evaluations
+  parameters:
+    - $ref: '../../parameters/query/prefix.yaml'
+  responses:
+    '200':
+      description: evaluation list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/Evaluation.yaml'

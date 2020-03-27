@@ -1,0 +1,6 @@
+name: volume_id
+in: path
+description: Specifies the ID of the volume. This must be the full ID. This is specified as part of the path
+required: true
+schema:
+  type: string

@@ -1,0 +1,20 @@
+post:
+  summary: toggles the scheduling eligibility of the node
+  operationId: updateNodeEligibility
+  tags:
+    - nodes
+  parameters:
+    - $ref: '../../parameters/path/node_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/NodeUpdateEligibilityRequest.yaml'
+
+  responses:
+    '200':
+      description: node eligibility update response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/NodeEligibilityUpdateResponse.yaml'

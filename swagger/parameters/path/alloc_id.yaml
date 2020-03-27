@@ -1,0 +1,6 @@
+name: alloc_id
+in: path
+description: Specifies the UUID of the allocation. This must be the full UUID, not the short 8-character one
+required: true
+schema:
+  type: string

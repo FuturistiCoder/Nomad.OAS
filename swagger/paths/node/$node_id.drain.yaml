@@ -1,0 +1,21 @@
+post:
+  summary: toggles the drain mode of the node
+  description: When draining is enabled, no further allocations will be assigned to this node, and existing allocations will be migrated to new nodes
+  operationId: updateDrainModeForNode
+  tags:
+    - nodes
+  parameters:
+    - $ref: '../../parameters/path/node_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/NodeUpdateDrainRequest.yaml'
+
+  responses:
+    '200':
+      description: node drain update response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/NodeDrainUpdateResponse.yaml'

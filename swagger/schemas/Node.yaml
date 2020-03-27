@@ -1,6 +1,6 @@
 type: object
 properties:
-  Id:
+  ID:
     type: string
   Datacenter:
     type: string

@@ -1,0 +1,6 @@
+name: deployment_id
+in: path
+description: Specifies the UUID of the deployment. This must be the full UUID, not the short 8-character one. This is specified as part of the path
+required: true
+schema:
+  type: string

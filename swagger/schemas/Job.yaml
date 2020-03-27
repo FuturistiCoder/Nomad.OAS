@@ -6,9 +6,9 @@ properties:
     type: string
   Namespace:
     type: string
-  Id:
+  ID:
     type: string
-  ParentId:
+  ParentID:
     type: string
   Name:
     type: string

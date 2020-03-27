@@ -1,6 +1,6 @@
 type: object
 properties:
-  Id:
+  ID:
     type: string
   EvalID:
     type: string
@@ -8,7 +8,7 @@ properties:
     type: string
   Namespace:
     type: string
-  NodeId:
+  NodeID:
     type: string
   NodeName:
     type: string
@@ -34,7 +34,7 @@ properties:
       $ref: './TaskState.yaml'
   DeploymentStatus:
     $ref: './AllocDeploymentStatus.yaml'
-  FollowupEvalId:
+  FollowupEvalID:
     type: string
   RescheduleTracker:
     $ref: './RescheduleTracker.yaml'

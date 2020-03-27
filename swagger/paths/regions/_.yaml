@@ -1,0 +1,14 @@
+get:
+  summary: list all known regions
+  operationId: getRegions
+  tags:
+    - regions
+  responses:
+    '200':
+      description: region list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string

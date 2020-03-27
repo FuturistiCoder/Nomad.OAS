@@ -1,8 +1,8 @@
 type: object
 properties:
-  AccessorId:
+  AccessorID:
     type: string
-  SecretId:
+  SecretID:
     type: string
   Name:
     type: string

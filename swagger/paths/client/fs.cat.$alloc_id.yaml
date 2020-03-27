@@ -1,0 +1,15 @@
+get:
+  summary: reads the contents of a file in an allocation directory
+  operationId: getClientFile
+  tags:
+    - client
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+    - $ref: '../../parameters/query/path.yaml'
+  responses:
+    '200':
+      description: file response
+      content:
+        text/plain:
+          schema:
+            type: string

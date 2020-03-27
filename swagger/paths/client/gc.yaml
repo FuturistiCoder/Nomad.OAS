@@ -1,0 +1,10 @@
+get:
+  summary: forces a garbage collection of all stopped allocations on a node
+  operationId: garbageCollectAllocation
+  tags:
+    - client
+  parameters:
+    - $ref: '../../parameters/query/node_id.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/NullResponse.yaml'

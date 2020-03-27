@@ -1,0 +1,13 @@
+get:
+  summary: returns the address of the current leader in the region
+  operationId: getLeader
+  tags:
+    - status
+
+  responses:
+    '200':
+      description: leader name 
+      content:
+        application/json:
+          schema:
+            type: string

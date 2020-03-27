@@ -1,0 +1,6 @@
+name: format
+in: query
+description: Specifies the metrics format to be other than the JSON default. Currently, only prometheus is supported as an alternative format. This is specified as a query string parameter
+required: false
+schema:
+  type: string

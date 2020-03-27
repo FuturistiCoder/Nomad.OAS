@@ -1,6 +1,6 @@
 type: object
 properties:
-  Id:
+  ID:
     type: string
   Priority:
     type: integer
@@ -15,11 +15,11 @@ properties:
     type: string
   JobModifyIndex:
     $ref: './BigInteger.yaml'
-  NodeId:
+  NodeID:
     type: string
   NodeModifyIndex:
     $ref: './BigInteger.yaml'
-  DeploymentId:
+  DeploymentID:
     type: string
   Status:
     type: string

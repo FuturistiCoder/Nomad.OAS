@@ -1,6 +1,6 @@
 type: object
 properties:
-  NodeId:
+  NodeID:
     type: string
   DrainSpec:
     $ref: './DrainSpec.yaml'

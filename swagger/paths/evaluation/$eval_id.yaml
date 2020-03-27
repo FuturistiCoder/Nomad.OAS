@@ -1,0 +1,14 @@
+get:
+  summary: reads information about a specific evaluation by ID
+  operationId: getEvaluation
+  tags:
+    - evaluations
+  parameters:
+    - $ref: '../../parameters/path/eval_id.yaml'
+  responses:
+    '200':
+      description: evaluation
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/Evaluation.yaml'

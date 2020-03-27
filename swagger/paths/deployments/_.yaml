@@ -1,0 +1,16 @@
+get:
+  summary: lists all deployments
+  operationId: getDeployments
+  tags:
+    - deployments
+  parameters:
+    - $ref: '../../parameters/query/prefix.yaml'
+  responses:
+    '200':
+      description: deployment list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/Deployment.yaml'

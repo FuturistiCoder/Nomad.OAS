@@ -1,0 +1,17 @@
+get:
+  summary: lists files in an allocation directory
+  operationId: listClientFiles
+  tags:
+    - client
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+    - $ref: '../../parameters/query/path.yaml'
+  responses:
+    '200':
+      description: allocation file information list
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/AllocFileInfo.yaml'

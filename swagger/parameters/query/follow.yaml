@@ -1,0 +1,7 @@
+name: follow
+in: query
+description: Specifies whether to tail the file
+required: false
+schema:
+  type: boolean
+  default: true

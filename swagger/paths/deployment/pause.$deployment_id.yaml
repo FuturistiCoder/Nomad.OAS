@@ -1,0 +1,20 @@
+post:
+  summary: pause or unpause a deployment. This is done to pause a rolling upgrade or resume it
+  operationId: pauseDeployment
+  tags:
+    - deployments
+  parameters:
+    - $ref: '../../parameters/path/deployment_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/DeploymentPauseRequest.yaml'
+    
+  responses:
+    '200':
+      description: deployment update response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/DeploymentUpdateResponse.yaml'

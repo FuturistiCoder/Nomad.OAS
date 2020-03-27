@@ -1,0 +1,10 @@
+post:
+  summary: sends a signal to an allocation or task
+  operationId: signalAllocation
+  tags:
+    - allocations
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+  responses:
+    '200':
+      $ref: '../../responses/NullResponse.yaml'

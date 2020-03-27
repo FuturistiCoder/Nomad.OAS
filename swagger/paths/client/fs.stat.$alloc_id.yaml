@@ -1,0 +1,15 @@
+get:
+  summary: stats a file in an allocation
+  operationId: statClientFile
+  tags:
+    - client
+  parameters:
+    - $ref: '../../parameters/path/alloc_id.yaml'
+    - $ref: '../../parameters/query/path.yaml'
+  responses:
+    '200':
+      description: allocation file information
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/AllocFileInfo.yaml'

@@ -1,0 +1,6 @@
+name: task
+in: query
+description: Specifies the name of the task inside the allocation to stream logs from
+required: true
+schema:
+  type: string

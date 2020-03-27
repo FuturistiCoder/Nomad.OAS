@@ -1,0 +1,19 @@
+post:
+  summary: returns matches for a given prefix and context, where a context can be jobs, allocations, evaluations, nodes, or deployments
+  description: When using Nomad Enterprise, the allowed contexts include quotas and namespaces. Additionally, a prefix can be searched for within every context
+  operationId: search
+  tags:
+    - nodes
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/SearchRequest.yaml'
+
+  responses:
+    '200':
+      description: search response
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/SearchResponse.yaml'

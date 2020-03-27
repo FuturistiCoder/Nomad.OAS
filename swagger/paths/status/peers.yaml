@@ -1,0 +1,14 @@
+get:
+  summary: returns the set of raft peers in the region
+  operationId: getPeers
+  tags:
+    - status
+  responses:
+    '200':
+      description: peer list 
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string

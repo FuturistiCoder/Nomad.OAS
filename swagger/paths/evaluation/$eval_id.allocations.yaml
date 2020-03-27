@@ -1,0 +1,16 @@
+get:
+  summary: lists the allocations created or modified for the given evaluation
+  operationId: getAllocationsForEvaluation
+  tags:
+    - evaluations
+  parameters:
+    - $ref: '../../parameters/path/eval_id.yaml'
+  responses:
+    '200':
+      description: allocation list response
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../../schemas/AllocationListStub.yaml'

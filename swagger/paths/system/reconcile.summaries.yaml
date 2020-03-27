@@ -1,0 +1,8 @@
+put:
+  summary: reconciles the summaries of all registered jobs
+  operationId: reconcileSummary
+  tags:
+    - system
+  responses:
+    '200':
+      $ref: '../../responses/NullResponse.yaml'

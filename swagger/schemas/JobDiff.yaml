@@ -2,7 +2,7 @@ type: object
 properties:
   Type:
     type: string
-  Id:
+  ID:
     type: string
   Fields:
     type: array

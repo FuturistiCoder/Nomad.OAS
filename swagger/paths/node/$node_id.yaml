@@ -1,0 +1,14 @@
+get:
+  summary: queries the status of a client node
+  operationId: getNode
+  tags:
+    - nodes
+  parameters:
+    - $ref: '../../parameters/path/node_id.yaml'
+  responses:
+    '200':
+      description: node
+      content:
+        application/json:
+          schema:
+            $ref: '../../schemas/Node.yaml'

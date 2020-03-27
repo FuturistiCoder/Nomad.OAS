@@ -1,0 +1,6 @@
+name: plugin_id
+in: query
+description: Specifies a string to filter volumes based on a plugin ID prefix
+required: false
+schema:
+  type: string

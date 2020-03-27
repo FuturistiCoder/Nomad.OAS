@@ -1,0 +1,7 @@
+name: limit
+in: query
+description: Specifies the number of bytes to read from the offset
+required: true
+schema:
+  type: integer
+  format: int64

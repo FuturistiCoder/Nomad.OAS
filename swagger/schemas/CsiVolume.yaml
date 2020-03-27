@@ -1,10 +1,10 @@
 type: object
 properties:
-  Id:
+  ID:
     type: string
   Name:
     type: string
-  ExternalId:
+  ExternalID:
     type: string
   Namespace:
     type: string
@@ -32,7 +32,7 @@ properties:
       $ref: './AllocationListStub.yaml'
   Schedulable:
     type: boolean
-  PluginId:
+  PluginID:
     type: string
   Provider:
     type: string

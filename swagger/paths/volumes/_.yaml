@@ -1,0 +1,19 @@
+get:
+  summary: lists all volumes
+  operationId: getVolumes
+  tags:
+    - volumes
+  parameters:
+    - $ref: '../../parameters/query/volume_type.yaml'
+    - $ref: '../../parameters/query/node_id.yaml'
+    - $ref: '../../parameters/query/plugin_id.yaml'
+  responses:
+    '200':
+      description: volume list stub
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              # current only supports csi
+              $ref: '../../schemas/CsiVolumeListStub.yaml'
