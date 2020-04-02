@@ -10,7 +10,3 @@ properties:
     type: boolean
   MountOptions:
     $ref: './CsiMountOptions.yaml'
-  -:
-    type: array
-    items:
-      type: string

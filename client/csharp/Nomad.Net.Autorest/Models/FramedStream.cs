@@ -4,7 +4,7 @@ using System.IO;
 using System.Net.Http;
 using System.Text;
 
-namespace Nomad.Net.Models
+namespace HashiCorp.Nomad.Models
 {
     public class FramedStream : Stream
     {

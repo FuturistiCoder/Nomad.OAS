@@ -1,5 +1,5 @@
 $ref = '$ref'
-Push-Location ./schemas
+Push-Location $PSScriptRoot/../swagger/schemas
 Get-ChildItem | where { $_.Name -ne '_index.yaml' } | foreach {
     Write-Output "$($_.BaseName):"
     Write-Output "  ${ref}: './$($_.Name)'"

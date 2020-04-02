@@ -32,12 +32,16 @@ AllocationListStub:
   $ref: './AllocationListStub.yaml'
 AllocationMetric:
   $ref: './AllocationMetric.yaml'
+AllocationRestartRequest:
+  $ref: './AllocationRestartRequest.yaml'
 AllocDeploymentStatus:
   $ref: './AllocDeploymentStatus.yaml'
 AllocFileInfo:
   $ref: './AllocFileInfo.yaml'
 AllocResourceUsage:
   $ref: './AllocResourceUsage.yaml'
+AllocSignalRequest:
+  $ref: './AllocSignalRequest.yaml'
 AllocStopResponse:
   $ref: './AllocStopResponse.yaml'
 Attribute:
@@ -62,8 +66,36 @@ ConsulUpstream:
   $ref: './ConsulUpstream.yaml'
 CpuStats:
   $ref: './CpuStats.yaml'
+CsiControllerInfo:
+  $ref: './CsiControllerInfo.yaml'
+CsiInfo:
+  $ref: './CsiInfo.yaml'
+CsiMountOptions:
+  $ref: './CsiMountOptions.yaml'
+CsiNodeInfo:
+  $ref: './CsiNodeInfo.yaml'
+CsiPlugin:
+  $ref: './CsiPlugin.yaml'
+CsiPluginListStub:
+  $ref: './CsiPluginListStub.yaml'
+CsiTopology:
+  $ref: './CsiTopology.yaml'
+CsiVolume:
+  $ref: './CsiVolume.yaml'
+CsiVolumeListStub:
+  $ref: './CsiVolumeListStub.yaml'
+CsiVolumeRegisterRequest:
+  $ref: './CsiVolumeRegisterRequest.yaml'
 Deployment:
   $ref: './Deployment.yaml'
+DeploymentAllocHealthRequest:
+  $ref: './DeploymentAllocHealthRequest.yaml'
+DeploymentFailRequest:
+  $ref: './DeploymentFailRequest.yaml'
+DeploymentPauseRequest:
+  $ref: './DeploymentPauseRequest.yaml'
+DeploymentPromoteRequest:
+  $ref: './DeploymentPromoteRequest.yaml'
 DeploymentState:
   $ref: './DeploymentState.yaml'
 DeploymentUpdateResponse:
@@ -88,6 +120,8 @@ DriverInfo:
   $ref: './DriverInfo.yaml'
 EphemeralDisk:
   $ref: './EphemeralDisk.yaml'
+EvalOptions:
+  $ref: './EvalOptions.yaml'
 Evaluation:
   $ref: './Evaluation.yaml'
 FieldDiff:
@@ -106,24 +140,46 @@ Job:
   $ref: './Job.yaml'
 JobChildrenSummary:
   $ref: './JobChildrenSummary.yaml'
+JobDeregisterResponse:
+  $ref: './JobDeregisterResponse.yaml'
 JobDiff:
   $ref: './JobDiff.yaml'
+JobDispatchRequest:
+  $ref: './JobDispatchRequest.yaml'
 JobDispatchResponse:
   $ref: './JobDispatchResponse.yaml'
+JobEvaluateRequest:
+  $ref: './JobEvaluateRequest.yaml'
 JobListStub:
   $ref: './JobListStub.yaml'
+JobPlanRequest:
+  $ref: './JobPlanRequest.yaml'
 JobPlanResponse:
   $ref: './JobPlanResponse.yaml'
 JobRegisterResponse:
   $ref: './JobRegisterResponse.yaml'
+JobRevertRequest:
+  $ref: './JobRevertRequest.yaml'
+JobScaleStatusResponse:
+  $ref: './JobScaleStatusResponse.yaml'
+JobsParseRequest:
+  $ref: './JobsParseRequest.yaml'
+JobStabilityRequest:
+  $ref: './JobStabilityRequest.yaml'
 JobStabilityResponse:
   $ref: './JobStabilityResponse.yaml'
 JobSummary:
   $ref: './JobSummary.yaml'
+JobValidateRequest:
+  $ref: './JobValidateRequest.yaml'
 JobValidateResponse:
   $ref: './JobValidateResponse.yaml'
+JobVersionsResponse:
+  $ref: './JobVersionsResponse.yaml'
 JoinResponse:
   $ref: './JoinResponse.yaml'
+KeyringRequest:
+  $ref: './KeyringRequest.yaml'
 KeyringResponse:
   $ref: './KeyringResponse.yaml'
 LogConfig:
@@ -154,6 +210,8 @@ NodeDrainUpdateResponse:
   $ref: './NodeDrainUpdateResponse.yaml'
 NodeEligibilityUpdateResponse:
   $ref: './NodeEligibilityUpdateResponse.yaml'
+NodeEvalResponse:
+  $ref: './NodeEvalResponse.yaml'
 NodeEvent:
   $ref: './NodeEvent.yaml'
 NodeListStub:
@@ -174,6 +232,10 @@ NodeResources:
   $ref: './NodeResources.yaml'
 NodeScoreMeta:
   $ref: './NodeScoreMeta.yaml'
+NodeUpdateDrainRequest:
+  $ref: './NodeUpdateDrainRequest.yaml'
+NodeUpdateEligibilityRequest:
+  $ref: './NodeUpdateEligibilityRequest.yaml'
 ObjectDiff:
   $ref: './ObjectDiff.yaml'
 OperatorHealthReply:
@@ -182,12 +244,16 @@ ParameterizedJobConfig:
   $ref: './ParameterizedJobConfig.yaml'
 PeriodicConfig:
   $ref: './PeriodicConfig.yaml'
+PeriodicForceResponse:
+  $ref: './PeriodicForceResponse.yaml'
 PlanAnnotations:
   $ref: './PlanAnnotations.yaml'
 Port:
   $ref: './Port.yaml'
 PreemptionConfig:
   $ref: './PreemptionConfig.yaml'
+QueryOptions:
+  $ref: './QueryOptions.yaml'
 QuotaLimit:
   $ref: './QuotaLimit.yaml'
 QuotaSpec:
@@ -198,6 +264,8 @@ RaftConfiguration:
   $ref: './RaftConfiguration.yaml'
 RaftServer:
   $ref: './RaftServer.yaml'
+RegisterJobRequest:
+  $ref: './RegisterJobRequest.yaml'
 RequestedDevice:
   $ref: './RequestedDevice.yaml'
 RescheduleEvent:
@@ -212,12 +280,22 @@ ResourceUsage:
   $ref: './ResourceUsage.yaml'
 RestartPolicy:
   $ref: './RestartPolicy.yaml'
+ScalingEvent:
+  $ref: './ScalingEvent.yaml'
+ScalingPolicy:
+  $ref: './ScalingPolicy.yaml'
+ScalingPolicyListStub:
+  $ref: './ScalingPolicyListStub.yaml'
+ScalingRequest:
+  $ref: './ScalingRequest.yaml'
 SchedulerConfiguration:
   $ref: './SchedulerConfiguration.yaml'
 SchedulerConfigurationResponse:
   $ref: './SchedulerConfigurationResponse.yaml'
 SchedulerSetConfigurationResponse:
   $ref: './SchedulerSetConfigurationResponse.yaml'
+SearchRequest:
+  $ref: './SearchRequest.yaml'
 SearchResponse:
   $ref: './SearchResponse.yaml'
 SentinelPolicy:
@@ -250,6 +328,8 @@ Task:
   $ref: './Task.yaml'
 TaskArtifact:
   $ref: './TaskArtifact.yaml'
+TaskCsiPluginConfig:
+  $ref: './TaskCsiPluginConfig.yaml'
 TaskDiff:
   $ref: './TaskDiff.yaml'
 TaskEvent:
@@ -258,8 +338,12 @@ TaskGroup:
   $ref: './TaskGroup.yaml'
 TaskGroupDiff:
   $ref: './TaskGroupDiff.yaml'
+TaskGroupScaleStatus:
+  $ref: './TaskGroupScaleStatus.yaml'
 TaskGroupSummary:
   $ref: './TaskGroupSummary.yaml'
+TaskLifecycle:
+  $ref: './TaskLifecycle.yaml'
 TaskResourceUsage:
   $ref: './TaskResourceUsage.yaml'
 TaskState:

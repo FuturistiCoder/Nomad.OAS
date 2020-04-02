@@ -59,7 +59,3 @@ properties:
     $ref: './BigInteger.yaml'
   ModifyIndex:
     $ref: './BigInteger.yaml'
-  -:
-    type: array
-    items:
-      type: string

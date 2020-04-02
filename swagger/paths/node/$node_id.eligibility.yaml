@@ -4,7 +4,7 @@ post:
   tags:
     - nodes
   parameters:
-    - $ref: '../../parameters/path/node_id.yaml'
+    - $ref: '../../parameters/path/node_id_.yaml'
   requestBody:
     content:
       application/json:

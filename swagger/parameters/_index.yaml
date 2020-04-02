@@ -1,5 +1,54 @@
-#query
-addresses:
-  $ref: './query/addresses.yaml'
-node:
-  $ref: './query/node.yaml'
+﻿  alloc_id:
+    $ref: './path/alloc_id.yaml'
+  deployment_id:
+    $ref: './path/deployment_id.yaml'
+  eval_id:
+    $ref: './path/eval_id.yaml'
+  job_id:
+    $ref: './path/job_id.yaml'
+  node_id_:
+    $ref: './path/node_id_.yaml'
+  volume_id:
+    $ref: './path/volume_id.yaml'
+  addresses:
+    $ref: './query/addresses.yaml'
+  all:
+    $ref: './query/all.yaml'
+  follow:
+    $ref: './query/follow.yaml'
+  format:
+    $ref: './query/format.yaml'
+  io_type:
+    $ref: './query/io_type.yaml'
+  json_format:
+    $ref: './query/json_format.yaml'
+  limit:
+    $ref: './query/limit.yaml'
+  log_level:
+    $ref: './query/log_level.yaml'
+  node:
+    $ref: './query/node.yaml'
+  node_id:
+    $ref: './query/node_id.yaml'
+  offset:
+    $ref: './query/offset.yaml'
+  origin:
+    $ref: './query/origin.yaml'
+  path:
+    $ref: './query/path.yaml'
+  plain_format:
+    $ref: './query/plain_format.yaml'
+  plugin_id:
+    $ref: './query/plugin_id.yaml'
+  plugin_type:
+    $ref: './query/plugin_type.yaml'
+  prefix:
+    $ref: './query/prefix.yaml'
+  purge:
+    $ref: './query/purge.yaml'
+  server_id:
+    $ref: './query/server_id.yaml'
+  task:
+    $ref: './query/task.yaml'
+  volume_type:
+    $ref: './query/volume_type.yaml'

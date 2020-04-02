@@ -185,6 +185,11 @@ lodash.isequal@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha1-QVxEePK8wwEgwizhDtMib30+GOA=
 
+nswag@^13.3.0:
+  version "13.3.0"
+  resolved "https://registry.yarnpkg.com/nswag/-/nswag-13.3.0.tgz#6095875846a75a9406f38bb38f8cca727e967351"
+  integrity sha512-LxXxcbEot2vKCGYRWXNyp/ZsNnBE2SttOHOsn/4aOITdl9DVXSLETO76/PSByAcki4NGuW+WRCrLr89ggvbLWw==
+
 openapi-types@^1.3.5:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-1.3.5.tgz#6718cfbc857fe6c6f1471f65b32bdebb9c10ce40"
