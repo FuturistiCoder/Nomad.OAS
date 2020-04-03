@@ -1,11 +1,14 @@
 type: object
+nullable: true
 properties:
   Messages:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Keys:
     type: object
+    nullable: true
     additionalProperties:
       type: integer
       format: int32

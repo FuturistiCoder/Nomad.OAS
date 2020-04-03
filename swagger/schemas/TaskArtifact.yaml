@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   GetterSource:
     type: string
   GetterOptions:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   GetterMode:

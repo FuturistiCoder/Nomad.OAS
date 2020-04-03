@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Name:
     type: string
@@ -7,22 +8,27 @@ properties:
     format: int32
   Constraints:
     type: array
+    nullable: true
     items:
       $ref: './Constraint.yaml'
   Affinities:
     type: array
+    nullable: true
     items:
       $ref: './Affinity.yaml'
   Tasks:
     type: array
+    nullable: true
     items:
       $ref: './Task.yaml'
   Spreads:
     type: array
+    nullable: true
     items:
       $ref: './Spread.yaml'
   Volumes:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './VolumeRequest.yaml'
   RestartPolicy:
@@ -37,14 +43,17 @@ properties:
     $ref: './MigrateStrategy.yaml'
   Networks:
     type: array
+    nullable: true
     items:
       $ref: './NetworkResource.yaml'
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Services:
     type: array
+    nullable: true
     items:
       $ref: './Service.yaml'
   ShutdownDelay:

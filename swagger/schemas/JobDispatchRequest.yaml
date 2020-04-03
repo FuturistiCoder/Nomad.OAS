@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   Payload:
     type: string
     format: byte
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: string

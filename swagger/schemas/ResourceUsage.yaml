@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   MemoryStats:
     $ref: './MemoryStats.yaml'
@@ -6,5 +7,6 @@ properties:
     $ref: './CpuStats.yaml'
   DeviceStats:
     type: array
+    nullable: true
     items:
       $ref: './DeviceGroupStats.yaml'

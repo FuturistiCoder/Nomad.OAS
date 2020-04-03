@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   JobModifyIndex:
     $ref: './BigInteger.yaml'
   CreatedEvals:
     type: array
+    nullable: true
     items:
       $ref: './Evaluation.yaml'
   Diff:
@@ -12,6 +14,7 @@ properties:
     $ref: './PlanAnnotations.yaml'
   FailedTgAllocs:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './AllocationMetric.yaml'
   NextPeriodicLaunch:

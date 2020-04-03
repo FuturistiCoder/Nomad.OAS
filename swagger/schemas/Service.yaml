@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   ID:
     type: string
@@ -6,10 +7,12 @@ properties:
     type: string
   Tags:
     type: array
+    nullable: true
     items:
       type: string
   CanaryTags:
     type: array
+    nullable: true
     items:
       type: string
   EnableTagOverride:
@@ -20,6 +23,7 @@ properties:
     type: string
   Checks:
     type: array
+    nullable: true
     items:
       $ref: './ServiceCheck.yaml'
   CheckRestart:
@@ -28,9 +32,11 @@ properties:
     $ref: './ConsulConnect.yaml'
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   CanaryMeta:
     type: object
+    nullable: true
     additionalProperties:
       type: string

@@ -1,12 +1,15 @@
 type: object
+nullable: true
 properties:
   Matches:
     type: object
+    nullable: true
     additionalProperties:
       type: array
       items:
         type: string
   Truncations:
     type: object
+    nullable: true
     additionalProperties:
       type: boolean

@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   NodeID:
     type: string
   Scores:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './Double.yaml'
   NormScore:

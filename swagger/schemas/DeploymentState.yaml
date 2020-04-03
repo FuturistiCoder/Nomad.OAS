@@ -1,7 +1,9 @@
 type: object
+nullable: true
 properties:
   PlacedCanaries:
     type: array
+    nullable: true
     items:
       type: string
   AutoRevert:

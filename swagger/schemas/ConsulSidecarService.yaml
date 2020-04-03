@@ -1,7 +1,9 @@
 type: object
+nullable: true
 properties:
   Tags:
     type: array
+    nullable: true
     items:
       type: string
   Port:

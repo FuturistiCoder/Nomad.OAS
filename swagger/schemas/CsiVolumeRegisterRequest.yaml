@@ -1,6 +1,8 @@
 type: object
+nullable: true
 properties:
   Volumes:
     type: array
+    nullable: true
     items:
       $ref: './CsiVolume.yaml'

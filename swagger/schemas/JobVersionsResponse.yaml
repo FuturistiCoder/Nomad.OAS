@@ -1,10 +1,13 @@
 type: object
+nullable: true
 properties:
   Versions:
     type: array
+    nullable: true
     items:
       $ref: './Job.yaml'
   Diffs:
     type: array
+    nullable: true
     items:
       $ref: './JobDiff.yaml'

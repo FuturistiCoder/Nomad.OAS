@@ -1,12 +1,15 @@
 type: object
+nullable: true
 properties:
   Payload:
     type: string
   MetaRequired:
     type: array
+    nullable: true
     items:
       type: string
   MetaOptional:
     type: array
+    nullable: true
     items:
       type: string

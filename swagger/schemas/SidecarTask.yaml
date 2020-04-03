@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Name:
     type: string
@@ -8,16 +9,19 @@ properties:
     type: string
   Config:
     type: object
+    nullable: true
     additionalProperties:
       type: object
   Env:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Resources:
     $ref: './Resources.yaml'
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   KillTimeout:

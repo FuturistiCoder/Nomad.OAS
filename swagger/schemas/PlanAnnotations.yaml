@@ -1,10 +1,13 @@
 type: object
+nullable: true
 properties:
   DesiredTgUpdates:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './DesiredUpdates.yaml'
   PreemptedAllocs:
     type: array
+    nullable: true
     items:
       $ref: './AllocationListStub.yaml'

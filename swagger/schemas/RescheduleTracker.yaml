@@ -1,6 +1,8 @@
 type: object
+nullable: true
 properties:
   Events:
     type: array
+    nullable: true
     items:
       $ref: './RescheduleEvent.yaml'

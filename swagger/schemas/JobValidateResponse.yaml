@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   DriverConfigValidated:
     type: boolean
   ValidationErrors:
     type: array
+    nullable: true
     items:
       type: string
   Error:

@@ -7,19 +7,25 @@ using FluentAssertions;
 using Polly;
 
 using NomadTask = HashiCorp.Nomad.Task;
+using System.Diagnostics;
+using Xunit.Abstractions;
+using System.IO;
 
 namespace Nomad.Net.Test
 {
     public class ApiTestBase
     {
-        protected NomadApi Nomad { get; }
-
-        public ApiTestBase()
+        protected readonly ITestOutputHelper _output;
+        protected Ports BasePorts { get; set; } = new Ports
         {
-            Nomad = new NomadApi(new NomadApiConfiguration
-            {
-                BaseUrl = "http://127.0.0.1:4646/v1"
-            });
+            Http = 20000,
+            Rpc = 21000,
+            Serf = 22000
+        };
+
+        public ApiTestBase(ITestOutputHelper output)
+        {
+            _output = output ?? throw new ArgumentNullException(nameof(output));
         }
 
         public Job CreateTestJob()
@@ -28,7 +34,7 @@ namespace Nomad.Net.Test
             {
                 Name = "task1",
                 Driver = "mock_driver",
-                Config = { { "run_for", "20s" } },
+                Config = new Dictionary<string, object>{ { "run_for", "20s" } },
                 Resources = new Resources
                 {
                     Cpu = 100,
@@ -45,7 +51,7 @@ namespace Nomad.Net.Test
             {
                 Name = "group1",
                 Count = 1,
-                Tasks = { task },
+                Tasks = new[]{ task },
                 EphemeralDisk = new EphemeralDisk
                 {
                     SizeMb = 25
@@ -59,28 +65,79 @@ namespace Nomad.Net.Test
                 Region = "test-region",
                 Type = "batch",
                 Priority = 1,
-                Datacenters = { "dc1" },
-                TaskGroups = { taskGroup }
+                Datacenters = new[]{ "dc1" },
+                TaskGroups = new[]{ taskGroup },
+                Meta = new Dictionary<string, string>()
             };
         }
 
-        public async Task<Evaluation> RegisterTestJobAndPollUntilEvaluationCompletesSuccessfully(Job job)
+        public async Task<Evaluation> RegisterTestJobAndPollUntilEvaluationCompletes(NomadApi api, Job job)
         {
-            var result = await Nomad.RegisterJobAsync(new RegisterJobRequest { 
+            var result = await api.RegisterJobAsync(new RegisterJobRequest { 
                 Job = job
             });
             result.EvalID.Should().NotBe("0");
 
-            var evalutation = await Policy
+            var evaluation = await Policy
                 .HandleResult<Evaluation>(eval => eval.Status == "complete")
                 .WaitAndRetryAsync(20, i => TimeSpan.FromSeconds(5))
                 .ExecuteAsync(async () =>
                 {
-                    return await Nomad.GetEvaluationAsync(result.EvalID);
+                    return await api.GetEvaluationAsync(result.EvalID);
                 });
 
-            evalutation.BlockedEval.Should().NotBeNullOrEmpty();
-            return evalutation;
+            evaluation.ID.Should().Be(result.EvalID);
+            evaluation.NextEval.Should().BeNullOrEmpty();
+
+            return evaluation;
         }
+
+        public async Task<Evaluation> RegisterTestJobAndPollUntilEvaluationCompletesSuccessfully(NomadApi api, Job job)
+        {
+            var evaluation = await RegisterTestJobAndPollUntilEvaluationCompletes(api, job);
+
+            evaluation.BlockedEval.Should().BeNullOrEmpty();
+
+            return evaluation;
+        }
+
+        #region NomadAgentProcess Creation Helper
+        internal NomadAgentProcess NewServer()
+        {
+            var type = GetType();
+            var process = new NomadAgentProcess(new NomadAgentConfiguration
+            {
+                Region = "test-region",
+                Name = $"{type.Name}_{NomadAgentConfiguration.Count}",
+                DataDir = $"{Path.GetTempPath()}nomaddir_{type.Name}_{NomadAgentConfiguration.Count}",
+                Ports = BasePorts.Add(NomadAgentConfiguration.Count),
+            }, _output);
+
+            process.Start();
+            return process;
+        }
+
+        internal NomadAgentProcess NewClientServer()
+        {
+            var type = GetType();
+            var process = new NomadAgentProcess(new NomadAgentConfiguration
+            {
+                Region = "test-region",
+                Name = $"{type.Name}_{NomadAgentConfiguration.Count}",
+                DataDir = $"{Path.GetTempPath()}nomaddir_{type.Name}_{NomadAgentConfiguration.Count}",
+                Ports = BasePorts.Add(NomadAgentConfiguration.Count),
+                Client = new Client
+                {
+                    Enabled = true,
+                    Options = new Dictionary<string, string> { { "driver.raw_exec.enable", "1" } }
+                }
+            }, _output);
+
+            process.Start();
+            return process;
+        }
+
+        #endregion
     }
+
 }

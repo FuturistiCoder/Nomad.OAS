@@ -7,7 +7,7 @@ post:
     content:
       application/json:
         schema:
-          $ref: '../../schemas/Job.yaml'
+          $ref: '../../schemas/JobValidateRequest.yaml'
   responses:
     '200':
       description: job validate response

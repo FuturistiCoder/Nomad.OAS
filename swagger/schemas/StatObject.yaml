@@ -1,10 +1,13 @@
 type: object
+nullable: true
 properties:
   Nested:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './StatObject.yaml'
   Attributes:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './StatValue.yaml'

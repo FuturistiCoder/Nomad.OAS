@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   ID:
     type: string
@@ -39,10 +40,12 @@ properties:
     type: string
   FailedTgAllocs:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './AllocationMetric.yaml'
   ClassEligibility:
     type: object
+    nullable: true
     additionalProperties:
       type: boolean
   EscapedComputedClass:
@@ -53,6 +56,7 @@ properties:
     type: boolean
   QueuedAllocations:
     type: object
+    nullable: true
     additionalProperties:
       type: integer
       format: int32

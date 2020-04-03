@@ -1,7 +1,9 @@
 type: object
+nullable: true
 properties:
   Servers:
     type: array
+    nullable: true
     items:
       $ref: './RaftServer.yaml'
   Index:

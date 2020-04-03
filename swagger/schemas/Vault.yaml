@@ -1,7 +1,9 @@
 type: object
+nullable: true
 properties:
   Policies:
     type: array
+    nullable: true
     items:
       type: string
   Env:

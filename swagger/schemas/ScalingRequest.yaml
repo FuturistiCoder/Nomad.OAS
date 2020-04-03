@@ -1,10 +1,12 @@
 type: object
+nullable: true
 properties:
   Count:
     type: integer
     format: int64
   Target:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Reason:
@@ -13,6 +15,7 @@ properties:
     type: string
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: object
   PolicyOverride:

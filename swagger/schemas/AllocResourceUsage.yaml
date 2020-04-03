@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   ResourceUsage:
     $ref: './ResourceUsage.yaml'
   Tasks:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './TaskResourceUsage.yaml'
   Timestamp:

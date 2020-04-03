@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   DiskMb:
     type: integer
     format: int64
   Networks:
     type: array
+    nullable: true
     items:
       $ref: './NetworkResource.yaml'

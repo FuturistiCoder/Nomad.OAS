@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Vendor:
     type: string
@@ -8,9 +9,11 @@ properties:
     type: string
   Instances:
     type: array
+    nullable: true
     items:
       $ref: './NodeDevice.yaml'
   Attributes:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './Attribute.yaml'

@@ -1,17 +1,21 @@
 type: object
+nullable: true
 properties:
   Memory:
     $ref: './HostMemoryStats.yaml'
   Cpu:
     type: array
+    nullable: true
     items:
       $ref: './HostCpuStats.yaml'
   DiskStats:
     type: array
+    nullable: true
     items:
       $ref: './HostDiskStats.yaml'
   DeviceStats:
     type: array
+    nullable: true
     items:
       $ref: './DeviceGroupStats.yaml'
   Uptime:

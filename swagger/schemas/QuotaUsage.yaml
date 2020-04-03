@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   Name:
     type: string
   Used:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './QuotaLimit.yaml'
   CreateIndex:

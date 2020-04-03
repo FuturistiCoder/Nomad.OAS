@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Desired:
     type: integer
@@ -17,5 +18,6 @@ properties:
     format: int32
   Events:
     type: array
+    nullable: true
     items:
       $ref: './ScalingEvent.yaml'

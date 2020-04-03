@@ -1,7 +1,9 @@
 type: object
+nullable: true
 properties:
   Tasks:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './AllocatedTaskResources.yaml'
   Shared:

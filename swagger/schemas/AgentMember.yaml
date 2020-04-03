@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Name:
     type: string
@@ -9,6 +10,7 @@ properties:
     format: int32
   Tags:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Status:

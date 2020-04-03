@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Name:
     type: string
@@ -10,28 +11,34 @@ properties:
     $ref: './TaskLifecycle.yaml'
   Config:
     type: object
+    nullable: true
     additionalProperties:
       type: object
   Constraints:
     type: array
+    nullable: true
     items:
       $ref: './Constraint.yaml'
   Affinities:
     type: array
+    nullable: true
     items:
       $ref: './Affinity.yaml'
   Env:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Services:
     type: array
+    nullable: true
     items:
       $ref: './Service.yaml'
   Resources:
     $ref: './Resources.yaml'
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   KillTimeout:
@@ -41,18 +48,21 @@ properties:
     $ref: './LogConfig.yaml'
   Artifacts:
     type: array
+    nullable: true
     items:
       $ref: './TaskArtifact.yaml'
   Vault:
     $ref: './Vault.yaml'
   Templates:
     type: array
+    nullable: true
     items:
       $ref: './Template.yaml'
   DispatchPayload:
     $ref: './DispatchPayloadConfig.yaml'
   VolumeMounts:
     type: array
+    nullable: true
     items:
       $ref: './VolumeMount.yaml'
   Csi_plugin:

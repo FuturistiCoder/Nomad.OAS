@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   LocalServiceAddress:
     type: string
@@ -7,9 +8,11 @@ properties:
     format: int32
   Upstreams:
     type: array
+    nullable: true
     items:
       $ref: './ConsulUpstream.yaml'
   Config:
     type: object
+    nullable: true
     additionalProperties:
       type: object

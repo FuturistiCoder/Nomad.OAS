@@ -1,8 +1,10 @@
 type: object
+nullable: true
 properties:
   FsType:
     type: string
   MountFlags:
     type: array
+    nullable: true
     items:
       type: string

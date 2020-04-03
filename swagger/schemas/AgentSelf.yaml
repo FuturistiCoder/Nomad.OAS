@@ -1,13 +1,16 @@
 type: object
+nullable: true
 properties:
   Config:
     type: object
+    nullable: true
     additionalProperties:
       type: object
   Member:
     $ref: './AgentMember.yaml'
   Stats:
     type: object
+    nullable: true
     additionalProperties:
       type: object
       additionalProperties:

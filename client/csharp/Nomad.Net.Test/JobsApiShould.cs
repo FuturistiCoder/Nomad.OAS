@@ -8,24 +8,35 @@ using Xunit;
 using Task = System.Threading.Tasks.Task;
 using NomadTask = HashiCorp.Nomad.Task;
 using System.Linq;
+using Xunit.Abstractions;
 
 namespace Nomad.Net.Test
 {
     public class JobsApiShould : ApiTestBase
     {
+        public JobsApiShould(ITestOutputHelper output) : base(output)
+        {
+            BasePorts.Http = 20100;
+            BasePorts.Rpc = 21100;
+            BasePorts.Serf = 22100;
+        }
+
         [Fact]
         public async Task RegisterANewJob()
         {
-            await AssertThatNoJobsHaveBeenRun();
+            using var agent = NewServer();
+            var api = agent.CreateNomadApi();
+
+            await AssertThatNoJobsHaveBeenRun(api);
             var job = CreateTestJob();
 
-            var registerResponse = await Nomad.RegisterJobAsync(new RegisterJobRequest
+            var registerResponse = await api.RegisterJobAsync(new RegisterJobRequest
             {
                 Job = job
             });
 
             registerResponse.EvalID.Should().NotBeNullOrEmpty();
-            var jobs = await Nomad.GetJobsAsync(null);  
+            var jobs = await api.GetJobsAsync(null);  
             jobs.Count.Should().Be(1);
             jobs.First().ID.Should().Be(job.ID);
             foreach (var j in jobs)
@@ -34,41 +45,49 @@ namespace Nomad.Net.Test
             }
         }
 
-        private async Task AssertThatNoJobsHaveBeenRun()
+        private async Task AssertThatNoJobsHaveBeenRun(NomadApi api)
         {
-            var result = await Nomad.GetJobsAsync(null);
+            var result = await api.GetJobsAsync(null);
             result.Should().BeEmpty();
         }
 
         [Fact]
         public async Task ValidateJob()
         {
+            using var agent = NewServer();
+            var api = agent.CreateNomadApi();
+
             var job = CreateTestJob();
-            var result = await Nomad.ValidateJobAsync(job);
+            var result = await api.ValidateJobAsync(new JobValidateRequest { Job = job });
             result.ValidationErrors.Should().BeNullOrEmpty();
 
             job.ID = null;
-            result = await Nomad.ValidateJobAsync(job);
+            result = await api.ValidateJobAsync(new JobValidateRequest { Job = job });
             result.ValidationErrors.Should().NotBeNullOrEmpty();
         }
 
         [Fact]
         public async Task RevertJob()
         {
+            using var agent = NewClientServer();
+            var api = agent.CreateNomadApi();
+
             var job = CreateTestJob();
-            _ = await RegisterTestJobAndPollUntilEvaluationCompletesSuccessfully(job);
+            _ = await RegisterTestJobAndPollUntilEvaluationCompletesSuccessfully(api, job);
             job.Meta.Add("foo", "bar");
-            _ = await RegisterTestJobAndPollUntilEvaluationCompletesSuccessfully(job);
+            _ = await RegisterTestJobAndPollUntilEvaluationCompletesSuccessfully(api, job);
 
             // Fails at incorrect version
-            _ = await Nomad.RevertJobAsync(job.ID, new JobRevertRequest
-            {
-                JobID = job.ID,
-                JobVersion = 0,
-                EnforcePriorVersion = 10
-            });
+            Func<Task<JobRegisterResponse>> func = () =>
+                api.RevertJobAsync(job.ID, new JobRevertRequest
+                {
+                    JobID = job.ID,
+                    JobVersion = 0,
+                    EnforcePriorVersion = 10
+                });
+            func.Should().Throw<ApiException>();
 
-            var revertedResponse = await Nomad.RevertJobAsync(job.ID, new JobRevertRequest
+            var revertedResponse = await api.RevertJobAsync(job.ID, new JobRevertRequest
             {
                 JobID = job.ID,
                 JobVersion = 0,

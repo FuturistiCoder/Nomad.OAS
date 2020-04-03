@@ -1,9 +1,11 @@
 type: object
+nullable: true
 properties:
   NodeModifyIndex:
     $ref: './BigInteger.yaml'
   EvalIDs:
     type: array
+    nullable: true
     items:
       type: string
   EvalCreateIndex:

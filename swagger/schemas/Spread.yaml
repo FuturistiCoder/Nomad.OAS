@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Attribute:
     type: string
@@ -6,5 +7,6 @@ properties:
     $ref: './Short.yaml'
   SpreadTarget:
     type: array
+    nullable: true
     items:
       $ref: './SpreadTarget.yaml'

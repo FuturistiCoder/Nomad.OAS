@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   ID:
     type: string
@@ -12,6 +13,7 @@ properties:
     type: boolean
   Attributes:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Resources:
@@ -24,10 +26,12 @@ properties:
     $ref: './NodeReservedResources.yaml'
   Links:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: string
   NodeClass:
@@ -47,22 +51,27 @@ properties:
     format: int64
   Events:
     type: array
+    nullable: true
     items:
       $ref: './NodeEvent.yaml'
   Drivers:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './DriverInfo.yaml'
   HostVolumes:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './HostVolumeInfo.yaml'
   CsiControllerPlugins:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './CsiInfo.yaml'
   CsiNodePlugins:
     type: object
+    nullable: true
     additionalProperties:
       $ref: './CsiInfo.yaml'
   CreateIndex:

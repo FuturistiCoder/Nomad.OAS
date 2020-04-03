@@ -1,4 +1,5 @@
 type: object
+nullable: true
 properties:
   Reason:
     type: string
@@ -6,6 +7,7 @@ properties:
     type: string
   Meta:
     type: object
+    nullable: true
     additionalProperties:
       type: object
   Time:

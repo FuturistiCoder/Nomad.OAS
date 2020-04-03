@@ -1,12 +1,15 @@
 type: object
+nullable: true
 properties:
   DeploymentID:
     type: string
   HealthyAllocationIDs:
     type: array
+    nullable: true
     items:
       type: string
   UnhealthyAllocationIDs:
     type: array
+    nullable: true
     items:
       type: string
