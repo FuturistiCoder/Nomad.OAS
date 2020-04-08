@@ -27,3 +27,4 @@ properties:
   StableSince:
     type: string
     format: date-time
+    nullable: true

@@ -20,5 +20,6 @@ properties:
   NextPeriodicLaunch:
     type: string
     format: date-time
+    nullable: true
   Warnings:
     type: string

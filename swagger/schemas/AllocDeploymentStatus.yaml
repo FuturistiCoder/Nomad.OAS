@@ -6,6 +6,7 @@ properties:
   Timestamp:
     type: string
     format: date-time
+    nullable: true
   Canary:
     type: boolean
   ModifyIndex:

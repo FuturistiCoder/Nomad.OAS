@@ -15,3 +15,4 @@ properties:
   UpdateTime:
     type: string
     format: date-time
+    nullable: true

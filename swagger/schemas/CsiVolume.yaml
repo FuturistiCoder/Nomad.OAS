@@ -60,6 +60,7 @@ properties:
   ResourceExhausted:
     type: string
     format: date-time
+    nullable: true
   CreateIndex:
     $ref: './BigInteger.yaml'
   ModifyIndex:

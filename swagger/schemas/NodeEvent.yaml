@@ -13,5 +13,6 @@ properties:
   Timestamp:
     type: string
     format: date-time
+    nullable: true
   CreateIndex:
     $ref: './BigInteger.yaml'

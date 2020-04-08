@@ -8,3 +8,4 @@ properties:
   Timestamp:
     type: string
     format: date-time
+    nullable: true

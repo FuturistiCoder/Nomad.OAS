@@ -32,6 +32,7 @@ properties:
   WaitUntil:
     type: string
     format: date-time
+    nullable: true
   NextEval:
     type: string
   PreviousEval:

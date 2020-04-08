@@ -10,12 +10,15 @@ properties:
   LastRestart:
     type: string
     format: date-time
+    nullable: true
   StartedAt:
     type: string
     format: date-time
+    nullable: true
   FinishedAt:
     type: string
     format: date-time
+    nullable: true
   Events:
     type: array
     nullable: true

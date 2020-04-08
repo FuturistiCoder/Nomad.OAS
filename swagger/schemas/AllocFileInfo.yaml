@@ -13,5 +13,6 @@ properties:
   ModTime:
     type: string
     format: date-time
+    nullable: true
   ContentType:
     type: string

@@ -5,6 +5,12 @@ post:
     - allocations
   parameters:
     - $ref: '../../parameters/path/alloc_id.yaml'
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: '../../schemas/AllocSignalRequest.yaml'
+
   responses:
     '200':
       $ref: '../../responses/NullResponse.yaml'

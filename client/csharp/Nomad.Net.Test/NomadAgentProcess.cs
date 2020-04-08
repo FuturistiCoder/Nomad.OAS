@@ -8,6 +8,10 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using Xunit.Abstractions;
+using Task = System.Threading.Tasks.Task;
+using NomadTask = HashiCorp.Nomad.Task;
+using System.Linq;
+using System.Net.Http;
 
 namespace Nomad.Net.Test
 {
@@ -74,6 +78,7 @@ namespace Nomad.Net.Test
             _output.WriteLine("starting a new nomad agent process by using config:");
             _output.WriteLine(configJson);
             var result = base.Start();
+            _output.WriteLine($"[process] agent process id: {Id}");
             BeginOutputReadLine();
             BeginErrorReadLine();
             WaitNomadAgentStarted();
@@ -103,17 +108,19 @@ namespace Nomad.Net.Test
         {
             var api = CreateNomadApi();
             var result = Policy
-                .Handle<Exception>()
-                .WaitAndRetryAsync(20, i => TimeSpan.FromSeconds(5))
+                .HandleResult<ICollection<NodeListStub>>(nodes => nodes.Where(node => node.Status != "ready").Any())
+                .Or<ApiException>()
+                .Or<HttpRequestException>()
+                .WaitAndRetryAsync(20, i => TimeSpan.FromSeconds(1))
                 .ExecuteAndCaptureAsync(async () =>
                 {
                     _output.WriteLine("Waiting for nomad agent process be ready...");
                     if (HasExited)
                     {
                         _output.WriteLine($"Nomad agent process (name: {_configuration.Name} ) has exited");
-                        return null;
+                        throw new Exception("nomad agnet process is exited");
                     }
-                    return await api.GetLeaderAsync();
+                    return await api.GetNodesAsync(null);
                 }).GetAwaiter().GetResult();
 
             result.Outcome.Should().Be(OutcomeType.Successful);
@@ -124,7 +131,8 @@ namespace Nomad.Net.Test
         {
             OutputDataReceived -= NomadAgentProcess_OutputDataReceived;
             ErrorDataReceived -= NomadAgentProcess_ErrorDataReceived;
-            Kill();
+            _output.WriteLine($"[process] killing process id: {Id}");
+            Kill(true);
         }
     }
 }

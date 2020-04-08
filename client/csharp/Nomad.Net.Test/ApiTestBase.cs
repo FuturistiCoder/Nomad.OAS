@@ -10,12 +10,16 @@ using NomadTask = HashiCorp.Nomad.Task;
 using System.Diagnostics;
 using Xunit.Abstractions;
 using System.IO;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace Nomad.Net.Test
 {
     public class ApiTestBase
     {
         protected readonly ITestOutputHelper _output;
+        protected string NONSENSE_GUID = "12345678-abcd-efab-cdef-123456789abc";
+
         protected Ports BasePorts { get; set; } = new Ports
         {
             Http = 20000,
@@ -71,6 +75,15 @@ namespace Nomad.Net.Test
             };
         }
 
+        public Task<Evaluation> PollForEvaluationCompletion(NomadApi api, string evalId)
+             => Policy
+                .HandleResult<Evaluation>(eval => eval.Status != "complete")
+                .WaitAndRetryAsync(100, i => TimeSpan.FromSeconds(0.1))
+                .ExecuteAsync(async () =>
+                {
+                    return await api.GetEvaluationAsync(evalId);
+                });
+
         public async Task<Evaluation> RegisterTestJobAndPollUntilEvaluationCompletes(NomadApi api, Job job)
         {
             var result = await api.RegisterJobAsync(new RegisterJobRequest { 
@@ -78,14 +91,7 @@ namespace Nomad.Net.Test
             });
             result.EvalID.Should().NotBe("0");
 
-            var evaluation = await Policy
-                .HandleResult<Evaluation>(eval => eval.Status == "complete")
-                .WaitAndRetryAsync(20, i => TimeSpan.FromSeconds(5))
-                .ExecuteAsync(async () =>
-                {
-                    return await api.GetEvaluationAsync(result.EvalID);
-                });
-
+            var evaluation = await PollForEvaluationCompletion(api, result.EvalID);
             evaluation.ID.Should().Be(result.EvalID);
             evaluation.NextEval.Should().BeNullOrEmpty();
 
@@ -95,23 +101,24 @@ namespace Nomad.Net.Test
         public async Task<Evaluation> RegisterTestJobAndPollUntilEvaluationCompletesSuccessfully(NomadApi api, Job job)
         {
             var evaluation = await RegisterTestJobAndPollUntilEvaluationCompletes(api, job);
-
             evaluation.BlockedEval.Should().BeNullOrEmpty();
-
             return evaluation;
         }
 
         #region NomadAgentProcess Creation Helper
-        internal NomadAgentProcess NewServer()
+
+        internal NomadAgentProcess NewServer(Action<NomadAgentConfiguration> configure = null)
         {
             var type = GetType();
-            var process = new NomadAgentProcess(new NomadAgentConfiguration
+            var config = new NomadAgentConfiguration
             {
                 Region = "test-region",
                 Name = $"{type.Name}_{NomadAgentConfiguration.Count}",
                 DataDir = $"{Path.GetTempPath()}nomaddir_{type.Name}_{NomadAgentConfiguration.Count}",
                 Ports = BasePorts.Add(NomadAgentConfiguration.Count),
-            }, _output);
+            };
+            configure?.Invoke(config);
+            var process = new NomadAgentProcess(config, _output);
 
             process.Start();
             return process;
@@ -130,7 +137,8 @@ namespace Nomad.Net.Test
                 {
                     Enabled = true,
                     Options = new Dictionary<string, string> { { "driver.raw_exec.enable", "1" } }
-                }
+                },
+                LogLevel = "Trace"
             }, _output);
 
             process.Start();

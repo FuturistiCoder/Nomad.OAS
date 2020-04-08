@@ -6,6 +6,8 @@ properties:
   ForceDeadline:
     type: string
     format: date-time
+    nullable: true
   StartedAt:
     type: string
     format: date-time
+    nullable: true
