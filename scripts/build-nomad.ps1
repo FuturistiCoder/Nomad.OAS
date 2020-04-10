@@ -44,7 +44,10 @@ $ImportPath = "github.com/hashicorp/nomad"
 
 $GOPATH = go env GOPATH
 $WorkTree = "$GOPATH/src/$ImportPath"
-Remove-Item -Recurse -Force -Path $WorkTree
+
+if (Test-Path $WorkTree) {
+    Remove-Item -Recurse -Force -Path $WorkTree
+}
 git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree
 
 Write-Output "Building Nomad..."
