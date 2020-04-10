@@ -24,12 +24,6 @@ steps:
   inputs:
     version: '1.12'
 
-- task: Go@0
-  inputs:
-    command: 'custom'
-    customCommand: 'install'
-    arguments: '-tags nomad_test $(ImportPath)'
-
 - task: PowerShell@2
   displayName: build nomad
   inputs:
