@@ -25,13 +25,6 @@ function Test-NomadVersion {
     }
 }
 
-
-if (-not (Test-Path $ENV:GOPATH))
-{
-    Write-Error "GOPATH must be set"
-    exit 1
-}
-
 if (-not (Test-GoVersion))
 {
     Write-Error "Go must be installed"
@@ -48,7 +41,9 @@ Write-Output "Will clone Nomad $NomadVersion and build it with Go $GoVersion"
 
 Write-Output "Cloning Nomad $NomadVersion..."
 $ImportPath = "github.com/hashicorp/nomad"
-$WorkTree = "$ENV:GOPATH/src/$ImportPath"
+
+$GOPATH = go env GOPATH
+$WorkTree = "$GOPATH/src/$ImportPath"
 Remove-Item -Recurse -Force -Path $WorkTree
 git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree
 
