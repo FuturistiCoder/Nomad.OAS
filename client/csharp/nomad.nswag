@@ -87,7 +87,7 @@
       "enumNameGeneratorType": null,
       "serviceHost": null,
       "serviceSchemes": null,
-      "output": "Nomad.Net.NSwag/generated/NomadApi.cs"
+      "output": "Nomad.Client.NSwag/generated/NomadApi.cs"
     }
   }
 }
