@@ -38,6 +38,9 @@ $WorkTree = "$GOPATH/src/$ImportPath"
 Remove-Item -Recurse -Force -Path $WorkTree
 git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree
 
+Write-Output "Building Nomad..."
+go install -tags nomad_test $ImportPath
+
 if (-not (Test-NomadVersion))
 {
     Write-Error "Nomad $NomadVersion is not available even after provisioning"
