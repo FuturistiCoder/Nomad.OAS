@@ -39,7 +39,9 @@ namespace Nomad.Client.Test
                 evaluation.ModifyTime.Should().NotBeNull();
             }
 
-            updatedResponse.Last().ID.Should().Be(jobRegisterResponse.EvalID);
+            // if the eval fails fast there can be more than 1
+            // order is unknown
+            updatedResponse.Any(eval => eval.ID == jobRegisterResponse.EvalID).Should().BeTrue();
         }
 
         [Fact]
@@ -59,8 +61,8 @@ namespace Nomad.Client.Test
             var updatedResponse = await api.GetEvaluationsAsync(jobRegisterResponse.EvalID.Substring(0, 4));
 
             // if the eval fails fast there can be more than 1
-            // but they are in order of most recent first, so look at the last one
-            updatedResponse.Last().ID.Should().Be(jobRegisterResponse.EvalID);
+            // order is unknown
+            updatedResponse.Any(eval => eval.ID == jobRegisterResponse.EvalID).Should().BeTrue();
         }
 
         [Fact]
