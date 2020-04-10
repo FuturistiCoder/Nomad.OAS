@@ -123,10 +123,10 @@ namespace Nomad.Client.Test
         {
             var api = CreateNomadApi();
             var result = Policy
-                .HandleResult<ICollection<NodeListStub>>(nodes => nodes.Where(node => node.Status != "ready").Any())
+                .HandleResult<ICollection<NodeListStub>>(nodes => nodes.DefaultIfEmpty(new NodeListStub { Status = "not ready" } ).Where(node => node.Status != "ready").Any())
                 .Or<ApiException>()
                 .Or<HttpRequestException>()
-                .WaitAndRetryAsync(20, i => TimeSpan.FromSeconds(1))
+                .WaitAndRetryAsync(200, i => TimeSpan.FromSeconds(0.1))
                 .ExecuteAndCaptureAsync(async () =>
                 {
                     _output.WriteLine("Waiting for nomad agent process be ready...");
