@@ -16,9 +16,9 @@ namespace Nomad.Net.Test
     {
         public JobsApiShould(ITestOutputHelper output) : base(output)
         {
-            BasePorts.Http = 20100;
-            BasePorts.Rpc = 21100;
-            BasePorts.Serf = 22100;
+            BasePorts.Http = 20400;
+            BasePorts.Rpc = 21400;
+            BasePorts.Serf = 22400;
         }
 
         [Fact]

@@ -1,7 +1,7 @@
 {
-  "name": "nomad-swagger",
+  "name": "nomad-oas",
   "version": "0.10.4",
-  "description": "nomad swagger openapi specification",
+  "description": "nomad openapi specification",
   "author": "FuturistiCoder",
   "license": "MIT",
   "scripts": {

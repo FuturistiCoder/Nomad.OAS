@@ -16,6 +16,9 @@ namespace Nomad.Net.Test
     {
         public DeploymentsApiShould(ITestOutputHelper output) : base(output)
         {
+            BasePorts.Http = 20200;
+            BasePorts.Rpc = 21200;
+            BasePorts.Serf = 22200;
         }
 
         [Fact]

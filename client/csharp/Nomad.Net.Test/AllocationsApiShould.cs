@@ -17,6 +17,9 @@ namespace Nomad.Net.Test
     {
         public AllocationsApiShould(ITestOutputHelper output) : base(output)
         {
+            BasePorts.Http = 20100;
+            BasePorts.Rpc = 21100;
+            BasePorts.Serf = 22100;
         }
 
         [Fact]
@@ -159,6 +162,7 @@ namespace Nomad.Net.Test
                 .ExecuteAndCaptureAsync(() => api.GetAllocationAsync(allocationId));
             beforeSignalResult.Outcome.Should().Be(OutcomeType.Successful);
 
+            // FixMe: I don't know why 404 error.
             await api.SignalAllocationAsync(allocationId, new AllocSignalRequest
             {
                 Signal = "SIGALRM"

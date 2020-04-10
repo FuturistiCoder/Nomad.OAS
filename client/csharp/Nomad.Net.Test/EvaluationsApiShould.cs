@@ -17,6 +17,9 @@ namespace Nomad.Net.Test
     {
         public EvaluationsApiShould(ITestOutputHelper output) : base(output)
         {
+            BasePorts.Http = 20300;
+            BasePorts.Rpc = 21300;
+            BasePorts.Serf = 22300;
         }
 
         [Fact]
@@ -84,19 +87,19 @@ namespace Nomad.Net.Test
         [Fact]
         public async Task GetAllocationsForAnEvaluation()
         {
-            using var agent = NewServer();
+            using var agent = NewClientServer();
             var api = agent.CreateNomadApi();
 
             var initialResponse = await api.GetAllocationsForEvaluationAsync("8E231CF4-CA48-43FF-B694-5801E69E22FA");
             initialResponse.Should().BeEmpty();
 
-            var jobRegisterResponse = await api.RegisterJobAsync(new HashiCorp.Nomad.RegisterJobRequest {
+            var jobRegisterResponse = await api.RegisterJobAsync(new RegisterJobRequest {
                 Job = CreateTestJob()
             });
 
             var response = await Policy
                 .HandleResult<ICollection<AllocationListStub>>(result => !result.Any())
-                .WaitAndRetryAsync(100, i => TimeSpan.FromSeconds(5))
+                .WaitAndRetryAsync(20, i => TimeSpan.FromSeconds(0.3))
                 .ExecuteAsync(() => api.GetAllocationsForEvaluationAsync(jobRegisterResponse.EvalID));
 
             response.First().EvalID.Should().Be(jobRegisterResponse.EvalID);
