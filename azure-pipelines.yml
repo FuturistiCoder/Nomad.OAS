@@ -6,6 +6,12 @@ trigger:
     exclude:
     - README.md
 
+variables:
+  csharpProject: '**/Nomad.Client.NSwag.csproj'
+  csharpTestProject: '**/Nomad.Client.Test.csproj'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
 pool:
   vmImage: 'ubuntu-latest'
 
@@ -40,3 +46,37 @@ steps:
 - script: |
     yarn generate-csharp:nswag
   displayName: 'generate csharp client (nswag)'
+
+- task: DotNetCoreCLI@2
+  displayName: build nomad csharp client (nswag)
+  inputs:
+    command: 'build'
+    projects: '$(csharpProject)'
+    arguments: '-c $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: dotnet test
+  inputs:
+    command: 'test'
+    publishTestResults: true
+    arguments: $(csharpTestProject) -c $(buildConfiguration) /p:CollectCoverage=true;CoverletOutputFormat=cobertura;ExcludeByAttribute=Obsolete%2cGeneratedCode%2cCompilerGenerated
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '**/*.cobertura.xml'
+
+- task: DotNetCoreCLI@2
+  displayName: dotnet pack
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(csharpProject)'
+    nobuild: true
+    includesymbols: true
+    arguments: /p:SymbolPackageFormat=snupkg
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'artifacts'
+    publishLocation: 'Container'
