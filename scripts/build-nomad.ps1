@@ -14,9 +14,23 @@ function Test-GoVersion {
     }
 }
 
+if (-not (Test-GoVersion))
+{
+    Write-Error "Go must be installed"
+    exit 1
+}
+
+$GOPATH = go env GOPATH
+
+$GOBIN = go env GOBIN
+if (-not $GOBIN)
+{
+    $GOBIN = "$GOPATH/bin"
+}
+
 function Test-NomadVersion {
     try {
-        $version = iex "nomad -version" -ErrorAction SilentlyContinue
+        $version = iex "$GOBIN/nomad -version" -ErrorAction SilentlyContinue
         return $version.Contains($NomadVersion)
     }
     catch
@@ -25,11 +39,6 @@ function Test-NomadVersion {
     }
 }
 
-if (-not (Test-GoVersion))
-{
-    Write-Error "Go must be installed"
-    exit 1
-}
 
 if (Test-NomadVersion)
 {
@@ -42,7 +51,6 @@ Write-Output "Will clone Nomad $NomadVersion and build it with Go $GoVersion"
 Write-Output "Cloning Nomad $NomadVersion..."
 $ImportPath = "github.com/hashicorp/nomad"
 
-$GOPATH = go env GOPATH
 $WorkTree = "$GOPATH/src/$ImportPath"
 
 if (Test-Path $WorkTree) {
