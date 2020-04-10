@@ -22,14 +22,12 @@ steps:
 
 - task: GoTool@0
   inputs:
-    version: '1.12'
-    goPath: '$(HOME)/go'
+    version: '1.14'
 
 - task: PowerShell@2
   displayName: build nomad
   inputs:
     filePath: './scripts/build-nomad.ps1'
-
 
 - script: |
     yarn install
