@@ -15,9 +15,35 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- task: YarnInstaller@3
+  inputs:
+    versionSpec: '1.x'
+    checkLatest: true
+
+- task: GoTool@0
+  inputs:
+    version: '1.12'
+
+- task: Go@0
+  inputs:
+    command: 'custom'
+    customCommand: 'install'
+    arguments: '-tags nomad_test $(ImportPath)'
+
+- task: PowerShell@2
+  displayName: build nomad
+  inputs:
+    filePath: './scripts/build-nomad.ps1'
 
 
 - script: |
-    npm install
-    npm run build
-  displayName: 'npm install and build'
+    yarn install
+  displayName: 'yarn install'
+
+- script: |
+    yarn bundle
+  displayName: 'bundle oas to a single file'
+
+- script: |
+    yarn generate-csharp:nswag
+  displayName: 'generate csharp client (nswag)'
