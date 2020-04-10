@@ -1,0 +1,42 @@
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - README.md
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+
+- task: YarnInstaller@3
+  inputs:
+    versionSpec: '1.x'
+    checkLatest: true
+
+- task: GoTool@0
+  inputs:
+    version: '1.14'
+
+- task: PowerShell@2
+  displayName: build nomad
+  inputs:
+    filePath: './scripts/build-nomad.ps1'
+
+- script: |
+    yarn install
+  displayName: 'yarn install'
+
+- script: |
+    yarn bundle
+  displayName: 'bundle oas to a single file'
+
+- script: |
+    yarn generate-csharp:nswag
+  displayName: 'generate csharp client (nswag)'
