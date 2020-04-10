@@ -23,6 +23,10 @@ steps:
 - task: GoTool@0
   inputs:
     version: '1.12'
+- task: GoTool@0
+  inputs:
+    version: '1.12'
+    goPath: '$(HOME)/go'
 
 - task: PowerShell@2
   displayName: build nomad
