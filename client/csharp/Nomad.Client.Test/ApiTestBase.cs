@@ -13,7 +13,7 @@ using System.IO;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     public class ApiTestBase
     {

@@ -11,7 +11,7 @@ using Xunit.Abstractions;
 using HashiCorp.Nomad;
 using Polly;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     public class EvaluationsApiShould : ApiTestBase
     {

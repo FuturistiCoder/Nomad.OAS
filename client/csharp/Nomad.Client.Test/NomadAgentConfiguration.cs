@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     internal class NomadAgentConfiguration
     {

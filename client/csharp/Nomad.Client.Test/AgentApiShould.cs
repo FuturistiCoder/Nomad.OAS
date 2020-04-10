@@ -5,7 +5,7 @@ using FluentAssertions;
 using Task = System.Threading.Tasks.Task;
 using Xunit.Abstractions;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     public class AgentApiShould : ApiTestBase
     {

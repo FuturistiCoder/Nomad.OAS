@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     internal static class Extensions
     {

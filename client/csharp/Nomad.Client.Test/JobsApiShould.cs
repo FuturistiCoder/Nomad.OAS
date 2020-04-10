@@ -10,7 +10,7 @@ using NomadTask = HashiCorp.Nomad.Task;
 using System.Linq;
 using Xunit.Abstractions;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     public class JobsApiShould : ApiTestBase
     {

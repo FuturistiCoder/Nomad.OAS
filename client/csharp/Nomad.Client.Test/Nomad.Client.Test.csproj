@@ -16,8 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Nomad.Net.NSwag\Nomad.Net.NSwag.csproj" />
-    <ProjectReference Include="..\Nomad.Net\Nomad.Net.csproj" />
+    <ProjectReference Include="..\Nomad.Client.NSwag\Nomad.Client.NSwag.csproj" />
   </ItemGroup>
 
 </Project>

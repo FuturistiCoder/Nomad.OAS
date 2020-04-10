@@ -3,13 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomad.Net.Test", "Nomad.Net.Test\Nomad.Net.Test.csproj", "{C46557C7-B822-4CE7-A822-2269A4B2DFA6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomad.Client.Test", "Nomad.Client.Test\Nomad.Client.Test.csproj", "{C46557C7-B822-4CE7-A822-2269A4B2DFA6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04144B73-0CE6-4FA3-A787-F395C5D363EA}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.build.props = Directory.build.props
+	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomad.Net.Autorest", "Nomad.Net.Autorest\Nomad.Net.Autorest.csproj", "{7FCCEF55-81B3-4F7D-9563-718DB281C117}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomad.Client.Autorest", "Nomad.Client.Autorest\Nomad.Client.Autorest.csproj", "{7FCCEF55-81B3-4F7D-9563-718DB281C117}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomad.Net.NSwag", "Nomad.Net.NSwag\Nomad.Net.NSwag.csproj", "{33176976-2791-4C76-AB0E-A367621B8A9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nomad.Client.NSwag", "Nomad.Client.NSwag\Nomad.Client.NSwag.csproj", "{33176976-2791-4C76-AB0E-A367621B8A9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

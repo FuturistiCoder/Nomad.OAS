@@ -13,13 +13,14 @@ using NomadTask = HashiCorp.Nomad.Task;
 using System.Linq;
 using System.Net.Http;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     internal class NomadAgentProcess : Process
     {
         private readonly NomadAgentConfiguration _configuration;
         private readonly ITestOutputHelper _output;
         private string _configFilePath;
+        private static string _executePath;
 
         public NomadAgentProcess(NomadAgentConfiguration configuration, ITestOutputHelper output)
         {
@@ -52,11 +53,28 @@ namespace Nomad.Net.Test
             _output.WriteLine(e.Data ?? string.Empty);
         }
 
+        static NomadAgentProcess()
+        {
+            InitExecutePath();
+        }
+
+        private static void InitExecutePath()
+        {
+            using var goProcess = new Process();
+            var startInfo = goProcess.StartInfo;
+            startInfo.FileName = "go";
+            startInfo.Arguments = "env GOPATH";
+            startInfo.UseShellExecute = false;
+            startInfo.RedirectStandardOutput = true;
+            goProcess.Start();
+
+            string goPath = goProcess.StandardOutput.ReadToEnd().TrimEnd();
+            _executePath = Path.Combine(goPath, "bin", "nomad");
+        }
+
         private void InitStartInfo()
         {
-            var executePath = Path.Combine(Environment.GetEnvironmentVariable("GoPath"), "bin", "nomad.exe");
-
-            StartInfo.FileName = executePath;
+            StartInfo.FileName = _executePath;
             StartInfo.Arguments = $"agent -config {_configFilePath}";
             StartInfo.RedirectStandardOutput = true;
             StartInfo.RedirectStandardError = true;

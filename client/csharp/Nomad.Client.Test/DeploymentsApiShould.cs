@@ -10,7 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using HashiCorp.Nomad;
 
-namespace Nomad.Net.Test
+namespace Nomad.Client.Test
 {
     public class DeploymentsApiShould : ApiTestBase
     {
