@@ -47,6 +47,11 @@ steps:
     yarn generate-csharp:nswag
   displayName: 'generate csharp client (nswag)'
 
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '3.1.x'
+
 - task: DotNetCoreCLI@2
   displayName: build nomad csharp client (nswag)
   inputs:
