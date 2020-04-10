@@ -6,12 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Text;
-using Xunit.Abstractions;
-using Task = System.Threading.Tasks.Task;
-using NomadTask = HashiCorp.Nomad.Task;
 using System.Linq;
 using System.Net.Http;
+using Xunit.Abstractions;
 
 namespace Nomad.Client.Test
 {

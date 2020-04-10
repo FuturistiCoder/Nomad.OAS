@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using HashiCorp.Nomad;
-using Xunit;
-using Task = System.Threading.Tasks.Task;
-using NomadTask = HashiCorp.Nomad.Task;
+using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Xunit;
 using Xunit.Abstractions;
+using Task = System.Threading.Tasks.Task;
 
 namespace Nomad.Client.Test
 {
@@ -16,9 +13,6 @@ namespace Nomad.Client.Test
     {
         public JobsApiShould(ITestOutputHelper output) : base(output)
         {
-            BasePorts.Http = 20400;
-            BasePorts.Rpc = 21400;
-            BasePorts.Serf = 22400;
         }
 
         [Fact]
@@ -36,7 +30,7 @@ namespace Nomad.Client.Test
             });
 
             registerResponse.EvalID.Should().NotBeNullOrEmpty();
-            var jobs = await api.GetJobsAsync(null);  
+            var jobs = await api.GetJobsAsync(null);
             jobs.Count.Should().Be(1);
             jobs.First().ID.Should().Be(job.ID);
             foreach (var j in jobs)

@@ -1,9 +1,7 @@
-using System;
-using Xunit;
-using HashiCorp.Nomad;
 using FluentAssertions;
-using Task = System.Threading.Tasks.Task;
+using Xunit;
 using Xunit.Abstractions;
+using Task = System.Threading.Tasks.Task;
 
 namespace Nomad.Client.Test
 {
@@ -12,9 +10,6 @@ namespace Nomad.Client.Test
         public AgentApiShould(ITestOutputHelper output)
             : base(output)
         {
-            BasePorts.Http = 20000;
-            BasePorts.Rpc = 21000;
-            BasePorts.Serf = 22000;
         }
 
         [Fact]
@@ -28,6 +23,5 @@ namespace Nomad.Client.Test
             result.Config["Region"].Should().Be("test-region");
             result.Config["Datacenter"].Should().Be("dc1");
         }
-
     }
 }

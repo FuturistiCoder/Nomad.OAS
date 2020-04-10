@@ -1,15 +1,13 @@
 ﻿using FluentAssertions;
+using HashiCorp.Nomad;
+using Polly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Task = System.Threading.Tasks.Task;
-using NomadTask = HashiCorp.Nomad.Task;
 using Xunit;
 using Xunit.Abstractions;
-using HashiCorp.Nomad;
-using Polly;
+using Task = System.Threading.Tasks.Task;
 
 namespace Nomad.Client.Test
 {
@@ -17,9 +15,6 @@ namespace Nomad.Client.Test
     {
         public EvaluationsApiShould(ITestOutputHelper output) : base(output)
         {
-            BasePorts.Http = 20300;
-            BasePorts.Rpc = 21300;
-            BasePorts.Serf = 22300;
         }
 
         [Fact]
@@ -31,7 +26,8 @@ namespace Nomad.Client.Test
             var initialResponse = await api.GetEvaluationsAsync(null);
             initialResponse.Should().BeEmpty();
 
-            var jobRegisterResponse = await api.RegisterJobAsync(new HashiCorp.Nomad.RegisterJobRequest {
+            var jobRegisterResponse = await api.RegisterJobAsync(new HashiCorp.Nomad.RegisterJobRequest
+            {
                 Job = CreateTestJob()
             });
 
@@ -55,7 +51,8 @@ namespace Nomad.Client.Test
             var initialResponse = await api.GetEvaluationsAsync("abcdef");
             initialResponse.Should().BeEmpty();
 
-            var jobRegisterResponse = await api.RegisterJobAsync(new HashiCorp.Nomad.RegisterJobRequest {
+            var jobRegisterResponse = await api.RegisterJobAsync(new HashiCorp.Nomad.RegisterJobRequest
+            {
                 Job = CreateTestJob()
             });
 
@@ -76,7 +73,8 @@ namespace Nomad.Client.Test
             Func<Task<Evaluation>> func = () => api.GetEvaluationAsync("8E231CF4-CA48-43FF-B694-5801E69E22FA");
             func.Should().Throw<ApiException>();
 
-            var jobRegisterResponse = await api.RegisterJobAsync(new HashiCorp.Nomad.RegisterJobRequest {
+            var jobRegisterResponse = await api.RegisterJobAsync(new HashiCorp.Nomad.RegisterJobRequest
+            {
                 Job = CreateTestJob()
             });
 
@@ -93,7 +91,8 @@ namespace Nomad.Client.Test
             var initialResponse = await api.GetAllocationsForEvaluationAsync("8E231CF4-CA48-43FF-B694-5801E69E22FA");
             initialResponse.Should().BeEmpty();
 
-            var jobRegisterResponse = await api.RegisterJobAsync(new RegisterJobRequest {
+            var jobRegisterResponse = await api.RegisterJobAsync(new RegisterJobRequest
+            {
                 Job = CreateTestJob()
             });
 
@@ -104,6 +103,5 @@ namespace Nomad.Client.Test
 
             response.First().EvalID.Should().Be(jobRegisterResponse.EvalID);
         }
-
     }
 }

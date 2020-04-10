@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,6 +19,7 @@ namespace HashiCorp.Nomad
             _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
             BaseUrl = _configuration.BaseUrl;
         }
+
         protected void UpdateJsonSerializerSettings(JsonSerializerSettings settings)
         {
         }

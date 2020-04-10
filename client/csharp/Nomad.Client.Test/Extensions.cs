@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nomad.Client.Test
+﻿namespace Nomad.Client.Test
 {
     internal static class Extensions
     {

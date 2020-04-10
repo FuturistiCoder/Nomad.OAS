@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using FluentAssertions;
+using HashiCorp.Nomad;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 using Xunit;
 using Xunit.Abstractions;
 using Task = System.Threading.Tasks.Task;
-using NomadTask = HashiCorp.Nomad.Task;
-using FluentAssertions;
-using System.Linq;
-using System.Threading.Tasks;
-using HashiCorp.Nomad;
 
 namespace Nomad.Client.Test
 {
@@ -16,9 +13,6 @@ namespace Nomad.Client.Test
     {
         public DeploymentsApiShould(ITestOutputHelper output) : base(output)
         {
-            BasePorts.Http = 20200;
-            BasePorts.Rpc = 21200;
-            BasePorts.Serf = 22200;
         }
 
         [Fact]
@@ -45,7 +39,7 @@ namespace Nomad.Client.Test
         }
 
         [Fact]
-        public async Task  HandleDeficientUseCases()
+        public async Task HandleDeficientUseCases()
         {
             using var agent = NewServer();
             var api = agent.CreateNomadApi();
@@ -60,6 +54,5 @@ namespace Nomad.Client.Test
             var jobDeployment = await api.GetJobLatestDeploymentAsync("nonexistent-job");
             jobDeployment.Should().BeNull();
         }
-
     }
 }

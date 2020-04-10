@@ -7,6 +7,5 @@ namespace HashiCorp.Nomad
         public string BaseUrl { get; set; }
 
         public IObservable<string> ACLTokenObservable { get; set; }
-
     }
 }

@@ -1,15 +1,13 @@
 ﻿using FluentAssertions;
+using HashiCorp.Nomad;
+using Polly;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Task = System.Threading.Tasks.Task;
-using NomadTask = HashiCorp.Nomad.Task;
 using Xunit;
 using Xunit.Abstractions;
-using HashiCorp.Nomad;
-using Polly;
+using Task = System.Threading.Tasks.Task;
 
 namespace Nomad.Client.Test
 {
@@ -17,9 +15,6 @@ namespace Nomad.Client.Test
     {
         public AllocationsApiShould(ITestOutputHelper output) : base(output)
         {
-            BasePorts.Http = 20100;
-            BasePorts.Rpc = 21100;
-            BasePorts.Serf = 22100;
         }
 
         [Fact]
@@ -145,7 +140,8 @@ namespace Nomad.Client.Test
             string allocationId = allocations.First().ID;
 
             // not found
-            Func<Task> func2 = () => api.SignalAllocationAsync(allocationId, new AllocSignalRequest {
+            Func<Task> func2 = () => api.SignalAllocationAsync(allocationId, new AllocSignalRequest
+            {
                 Signal = "SIGALRM",
                 Task = "non-existent-task"
             });
@@ -181,7 +177,6 @@ namespace Nomad.Client.Test
                 .ExecuteAndCaptureAsync(() => api.GetAllocationAsync(allocationId));
 
             result.Outcome.Should().Be(OutcomeType.Successful);
-
         }
     }
 }

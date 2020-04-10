@@ -1,16 +1,11 @@
 ﻿using FluentAssertions;
+using HashiCorp.Nomad;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using Task = System.Threading.Tasks.Task;
-using NomadTask = HashiCorp.Nomad.Task;
 using Xunit;
 using Xunit.Abstractions;
-using HashiCorp.Nomad;
-using Polly;
-using System.Numerics;
+using Task = System.Threading.Tasks.Task;
 
 namespace Nomad.Client.Test
 {
@@ -18,15 +13,13 @@ namespace Nomad.Client.Test
     {
         public NodesApiShould(ITestOutputHelper output) : base(output)
         {
-            BasePorts.Http = 20500;
-            BasePorts.Rpc = 21500;
-            BasePorts.Serf = 22500;
         }
 
         [Fact]
         public async Task GetNodes()
         {
-            using var agent = NewServer(config => {
+            using var agent = NewServer(config =>
+            {
                 config.Name = "especially-named";
                 config.Client.Enabled = true;
             });
@@ -94,7 +87,8 @@ namespace Nomad.Client.Test
             var api = agent.CreateNomadApi();
 
             // not found
-            Func<Task<NodeDrainUpdateResponse>> func = () => api.UpdateDrainModeForNodeAsync(new NodeUpdateDrainRequest {
+            Func<Task<NodeDrainUpdateResponse>> func = () => api.UpdateDrainModeForNodeAsync(new NodeUpdateDrainRequest
+            {
                 NodeID = NONSENSE_GUID,
                 DrainSpec = new DrainSpec
                 {

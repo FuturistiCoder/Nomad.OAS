@@ -1,17 +1,12 @@
-﻿using HashiCorp.Nomad;
+﻿using FluentAssertions;
+using HashiCorp.Nomad;
+using Polly;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
-using Polly;
-
-using NomadTask = HashiCorp.Nomad.Task;
-using System.Diagnostics;
-using Xunit.Abstractions;
 using System.IO;
-using System.Text.Json.Serialization;
-using System.Text.Json;
+using System.Threading.Tasks;
+using Xunit.Abstractions;
+using NomadTask = HashiCorp.Nomad.Task;
 
 namespace Nomad.Client.Test
 {
@@ -38,7 +33,7 @@ namespace Nomad.Client.Test
             {
                 Name = "task1",
                 Driver = "mock_driver",
-                Config = new Dictionary<string, object>{ { "run_for", "20s" } },
+                Config = new Dictionary<string, object> { { "run_for", "20s" } },
                 Resources = new Resources
                 {
                     Cpu = 100,
@@ -55,7 +50,7 @@ namespace Nomad.Client.Test
             {
                 Name = "group1",
                 Count = 1,
-                Tasks = new[]{ task },
+                Tasks = new[] { task },
                 EphemeralDisk = new EphemeralDisk
                 {
                     SizeMb = 25
@@ -69,8 +64,8 @@ namespace Nomad.Client.Test
                 Region = "test-region",
                 Type = "batch",
                 Priority = 1,
-                Datacenters = new[]{ "dc1" },
-                TaskGroups = new[]{ taskGroup },
+                Datacenters = new[] { "dc1" },
+                TaskGroups = new[] { taskGroup },
                 Meta = new Dictionary<string, string>()
             };
         }
@@ -86,7 +81,8 @@ namespace Nomad.Client.Test
 
         public async Task<Evaluation> RegisterTestJobAndPollUntilEvaluationCompletes(NomadApi api, Job job)
         {
-            var result = await api.RegisterJobAsync(new RegisterJobRequest { 
+            var result = await api.RegisterJobAsync(new RegisterJobRequest
+            {
                 Job = job
             });
             result.EvalID.Should().NotBe("0");
@@ -145,7 +141,6 @@ namespace Nomad.Client.Test
             return process;
         }
 
-        #endregion
+        #endregion NomadAgentProcess Creation Helper
     }
-
 }
