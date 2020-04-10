@@ -1,14 +1,28 @@
-$NomadVersion = v0.11.0
+$NomadVersion = "v0.11.0"
 
 function Test-GoVersion {
-    $version = iex "go version"
-    Write-Output "using go version: $version"
-    return $version.Contains("go version")
+    try
+    {
+        $version = iex "go version" -ErrorAction SilentlyContinue
+        Write-Output "using go version: $version"
+        return $version.Contains("go version")
+
+    }
+    catch
+    {
+        return $false
+    }
 }
 
 function Test-NomadVersion {
-    $version = iex "nomad -version"
-    return $version.Contains($NomadVersion)
+    try {
+        $version = iex "nomad -version" -ErrorAction SilentlyContinue
+        return $version.Contains($NomadVersion)
+    }
+    catch
+    {
+        return $false
+    }
 }
 
 
@@ -34,7 +48,7 @@ Write-Output "Will clone Nomad $NomadVersion and build it with Go $GoVersion"
 
 Write-Output "Cloning Nomad $NomadVersion..."
 $ImportPath = "github.com/hashicorp/nomad"
-$WorkTree = "$GOPATH/src/$ImportPath"
+$WorkTree = "$ENV:GOPATH/src/$ImportPath"
 Remove-Item -Recurse -Force -Path $WorkTree
 git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree
 
