@@ -18,6 +18,7 @@ namespace Nomad.Client.Test
         private readonly ITestOutputHelper _output;
         private string _configFilePath;
         private static string _executePath;
+        private bool _clientEnabled => _configuration?.Client?.Enabled == true;
 
         public NomadAgentProcess(NomadAgentConfiguration configuration, ITestOutputHelper output)
         {
@@ -123,7 +124,7 @@ namespace Nomad.Client.Test
         {
             var api = CreateNomadApi();
             var result = Policy
-                .HandleResult<ICollection<NodeListStub>>(nodes => nodes.DefaultIfEmpty(new NodeListStub { Status = "not ready" } ).Where(node => node.Status != "ready").Any())
+                .HandleResult<ICollection<NodeListStub>>(nodes => nodes.DefaultIfEmpty(new NodeListStub { Status = _clientEnabled ? "not ready" : "ready" } ).Where(node => node.Status != "ready").Any())
                 .Or<ApiException>()
                 .Or<HttpRequestException>()
                 .WaitAndRetryAsync(200, i => TimeSpan.FromSeconds(0.1))
