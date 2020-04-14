@@ -1,6 +1,6 @@
-openapi: 3.0.2
+openapi: 3.0.3
 info:
-  version: 0.10.0
+  version: 0.11.0
   title: Nomad
   description: Nomad OpenApi specification
   license:
