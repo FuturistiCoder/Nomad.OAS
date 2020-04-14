@@ -52,6 +52,10 @@ steps:
     packageType: 'sdk'
     version: '3.1.x'
 
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+
 - task: DotNetCoreCLI@2
   displayName: build nomad csharp client (nswag)
   inputs:
