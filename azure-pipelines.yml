@@ -34,6 +34,7 @@ steps:
   displayName: build nomad
   inputs:
     filePath: './scripts/build-nomad.ps1'
+    pwsh: true
 
 - script: |
     yarn install
