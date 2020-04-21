@@ -13,7 +13,7 @@ variables:
   buildConfiguration: 'Release'
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
 steps:
 - task: NodeTool@0
@@ -34,6 +34,7 @@ steps:
   displayName: build nomad
   inputs:
     filePath: './scripts/build-nomad.ps1'
+    pwsh: true
 
 - script: |
     yarn install
@@ -50,6 +51,7 @@ steps:
 - task: UseGitVersion@5
   inputs:
     versionSpec: '5.x'
+    updateAssemblyInfo: true
 
 - task: UseDotNet@2
   inputs:
@@ -61,6 +63,16 @@ steps:
   env:
     Action: '##vso[build.updatebuildnumber]'
     BuildVersion: $(GitVersion.SemVer)
+
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'SignKey.snk'
+
+- task: CopyFiles@2
+  inputs:
+    Contents: 'SignKey.snk'
+    SourceFolder: '$(Agent.TempDirectory)'
+    TargetFolder: './client/csharp/Nomad.Client.NSwag'
 
 - task: DotNetCoreCLI@2
   displayName: build nomad csharp client (nswag)
