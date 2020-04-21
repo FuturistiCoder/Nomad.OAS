@@ -62,6 +62,16 @@ steps:
     Action: '##vso[build.updatebuildnumber]'
     BuildVersion: $(GitVersion.SemVer)
 
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: 'SignKey.snk'
+
+- task: CopyFiles@2
+  inputs:
+    Contents: 'SignKey.snk'
+    SourceFolder: '$(Agent.TempDirectory)'
+    TargetFolder: './client/csharp/Nomad.Client.NSwag'
+
 - task: DotNetCoreCLI@2
   displayName: build nomad csharp client (nswag)
   inputs:
