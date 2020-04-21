@@ -1,3 +1,4 @@
+$env:GIT_REDIRECT_STDERR = '2>&1'
 $NomadVersion = "v0.11.0"
 
 function Test-GoVersion {
@@ -56,7 +57,7 @@ $WorkTree = "$GOPATH/src/$ImportPath"
 if (Test-Path $WorkTree) {
     Remove-Item -Recurse -Force -Path $WorkTree
 }
-git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree 2>&1
+git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree
 
 Write-Output "Building Nomad..."
 go install -tags nomad_test $ImportPath
