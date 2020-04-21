@@ -56,7 +56,7 @@ $WorkTree = "$GOPATH/src/$ImportPath"
 if (Test-Path $WorkTree) {
     Remove-Item -Recurse -Force -Path $WorkTree
 }
-git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree
+git clone --depth 1 --branch $NomadVersion "https://$ImportPath" $WorkTree 2>&1
 
 Write-Output "Building Nomad..."
 go install -tags nomad_test $ImportPath

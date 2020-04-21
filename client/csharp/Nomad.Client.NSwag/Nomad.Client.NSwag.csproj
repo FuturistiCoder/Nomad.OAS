@@ -4,6 +4,8 @@
     <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
     <RootNamespace>HashiCorp.Nomad</RootNamespace>
     <AssemblyName>Nomad.Client</AssemblyName>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>SignKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
