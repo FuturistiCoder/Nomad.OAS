@@ -78,7 +78,7 @@ steps:
   inputs:
     command: 'build'
     projects: '$(csharpProject)'
-    arguments: '-c $(buildConfiguration)'
+    arguments: '-c $(buildConfiguration) -p:Version=$(GitVersion.SemVer)'
 
 - task: DotNetCoreCLI@2
   displayName: dotnet test
