@@ -99,7 +99,7 @@ steps:
     packagesToPack: '$(csharpProject)'
     nobuild: true
     includesymbols: true
-    arguments: /p:SymbolPackageFormat=snupkg
+    arguments: /p:SymbolPackageFormat=snupkg /p:Version=$(GitVersion.SemVer)
 
 - task: PublishBuildArtifacts@1
   inputs:
