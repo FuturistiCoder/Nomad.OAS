@@ -100,6 +100,7 @@ steps:
     nobuild: true
     includesymbols: true
     arguments: /p:SymbolPackageFormat=snupkg;Version=$(GitVersion.SemVer)
+    buildProperties: /p:SymbolPackageFormat=snupkg;Version=$(GitVersion.SemVer)
 
 - task: PublishBuildArtifacts@1
   inputs:
