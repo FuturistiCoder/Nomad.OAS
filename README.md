@@ -10,7 +10,7 @@ HashiCorp Nomad open api specification
 
 ### .Net
 
-- Nomad.Client ![Nuget](https://img.shields.io/nuget/v/nomad.client)
+- Nomad.Client [![Nuget](https://img.shields.io/nuget/v/nomad.client)](https://img.shields.io/nuget/v/nomad.client)
 
 client library in other languages can be generated
 
