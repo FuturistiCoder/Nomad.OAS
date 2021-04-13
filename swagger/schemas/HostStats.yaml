@@ -1,6 +1,8 @@
 type: object
 nullable: true
 properties:
+  AllocDirStats:
+    $ref: './HostAllocDirStats.yaml'
   Memory:
     $ref: './HostMemoryStats.yaml'
   Cpu:
@@ -22,3 +24,4 @@ properties:
     $ref: './BigInteger.yaml'
   CpuTicksConsumed:
     $ref: './Double.yaml'
+  

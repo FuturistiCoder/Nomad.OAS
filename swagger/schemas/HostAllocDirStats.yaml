@@ -1,0 +1,17 @@
+type: object
+nullable: true
+properties:
+  Available:
+    type: int64
+  Device:
+    type: string
+  InodesUsedPercent:
+    $ref: './Double.yaml'
+  Mountpoint:
+    type: string
+  Size:
+    type: int64
+  Used:
+    type: int64
+  UsedPercent:
+    $ref: './Double.yaml'
