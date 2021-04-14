@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     <RootNamespace>HashiCorp.Nomad</RootNamespace>
-    <AssemblyName>Nomad.Client</AssemblyName>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>SignKey.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+    <AssemblyName>Nomad-Client</AssemblyName>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 
+  </PropertyGroup>
+  
+  
   <ItemGroup>
     <Folder Include="generated\" />
   </ItemGroup>

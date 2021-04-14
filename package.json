@@ -9,11 +9,11 @@
     "clean": "rm -r dist/*",
     "bundle": "swagger-cli bundle swagger/swagger.yaml -o dist/swagger.json",
     "generate-csharp:autorest": "autorest-beta --v3 --input-file=dist/swagger.json --csharp --add-credentials --use-datetimeoffset --output-folder=client/csharp/Nomad.Client.Autorest/generated --namespace=HashiCorp.Nomad",
-    "generate-csharp:nswag": "nswag run client/csharp/nomad.nswag /runtime:NetCore31"
+    "generate-csharp:nswag": "nswag run client/csharp/nomad.nswag /runtime:Net50"
   },
   "devDependencies": {
     "@apidevtools/swagger-cli": "^4.0.2",
     "@autorest/autorest": "^3.0.6187",
-    "nswag": "^13.3.0"
+    "nswag": "^13.10.9"
   }
 }
