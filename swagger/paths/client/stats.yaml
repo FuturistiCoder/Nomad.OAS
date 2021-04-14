@@ -11,6 +11,4 @@ get:
       content:
         application/json:
           schema:
-            type: array
-            items:
-              $ref: '../../schemas/HostStats.yaml'
+            $ref: '../../schemas/HostStats.yaml'
